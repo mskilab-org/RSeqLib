@@ -1,2 +1,2 @@
 # seqLib
-R interface to SeqLib
+R interface to SeqLib cpp package
