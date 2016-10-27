@@ -42,6 +42,31 @@
 namespace SeqLib {
   template<typename T>
     inline std::string tostring(T d){
+      std::stringstream ss;
+      ss << d; 
+      return ss.str();
   }
+  
+  /** Check if a file is readable and exists
+   * @param name Name of a file to test
+   * @return File is readable and exists. 
+   */
+  inline bool read_access_test (const std::string& name){
+    return(unistd::access (name.c_str(), R_OK) == 0);
+  }
+  
+  /** Format an integer to include commas
+   * @param data Number to format
+   * @return String with formatted number containing commas
+   */
+  template<typename T> 
+  inline std::string AddCommas(T data) {
+    std::stringstream ss;
+    ss << data;
+    std::string s = ss.str();
+    if (s.length() > 3) // if the length of the input string is greater than 3, go ahead ... 
+      for(int i = s.length()-3; i > 0; i -= 3)
+  }
+    
 }
 

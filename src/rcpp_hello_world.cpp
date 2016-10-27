@@ -1,6 +1,7 @@
 #include <Rcpp.h>
-#include "/Users/knagdimov/Documents/rSeqLib/headerFiles/SeqLib/SeqLibCommon.h"
+#include "/Users/knagdimov/Documents/seqLib/headerFiles/SeqLib/SeqLibCommon.h"
 #include <iostream>
+#include <unistd.h>
 using namespace Rcpp;
 using namespace std;
 
@@ -26,4 +27,10 @@ int main()
   cout << __cplusplus << endl;
   cout << __APPLE__ << endl;
   cout << "hello" << endl;
+  
+  stringstream ss;
+  ss << 100;
+  cout << ss << endl;
+  
+  access();
 }
