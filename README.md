@@ -1,2 +1,2 @@
 # rSeqLib
-🎁  Official R wrapper for SeqLib 
+🎁 R interface to SeqLib cpp package
