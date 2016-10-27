@@ -1,2 +1,2 @@
-# rSeqLib_official
+# rSeqLib
 🎁  Official R wrapper for SeqLib 
