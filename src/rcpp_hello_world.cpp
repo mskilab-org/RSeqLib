@@ -1,5 +1,6 @@
 #include <Rcpp.h>
 #include "/Users/knagdimov/Documents/seqLib/headerFiles/SeqLib/SeqLibCommon.h"
+#include "/Users/knagdimov/Documents/seqLib/headerFiles/SeqLib/SeqLibUtils.h"
 #include <iostream>
 #include <unistd.h>
 using namespace Rcpp;
@@ -24,13 +25,6 @@ int bwa() {
 int main()
 {
   cout << SeqLib::RCOMPLEMENT_TABLE << endl;
-  cout << __cplusplus << endl;
-  cout << __APPLE__ << endl;
-  cout << "hello" << endl;
-  
-  stringstream ss;
-  ss << 100;
-  cout << ss << endl;
-  
-  access();
+  bool return_value = SeqLib::read_access_test("hello");
+  cout << return_value << endl;
 }
