@@ -1,6 +1,5 @@
 #include <Rcpp.h>
-#include "/Users/knagdimov/Documents/seqLib/headerFiles/SeqLib/SeqLibCommon.h"
-#include "/Users/knagdimov/Documents/seqLib/headerFiles/SeqLib/SeqLibUtils.h"
+
 #include <iostream>
 #include <unistd.h>
 using namespace Rcpp;
@@ -19,12 +18,4 @@ List rcpp_hello_world() {
 // [[Rcpp::export]]
 int bwa() {
     return 5; 
-}
-
-// [[Rcpp::export]]
-int main()
-{
-  cout << SeqLib::RCOMPLEMENT_TABLE << endl;
-  bool return_value = SeqLib::read_access_test("hello");
-  cout << return_value << endl;
 }
