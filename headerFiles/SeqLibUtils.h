@@ -76,7 +76,10 @@ namespace SeqLib {
        * @return Time formatted as "CPU: XmYs Wall:XmYs"
        * @note Does nto work on OSX or Windows (returns "not configured")
        */
-     
+      inline std::string displayRuntime()
+	
+      
+      
       /** Reverse complement in-place sequence containing upper/lower case ACTGN
        * @param a Sequence to be reverse complemented
        */
