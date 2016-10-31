@@ -2,6 +2,7 @@
 #include <Rcpp.h>
 #include "../headerFiles/SeqLibCommon.h"
 #include "../headerFiles/SeqLibUtils.h"
+#include "../SeqLib/SeqLib/FermiAssembler.h"
 using namespace Rcpp;
 
 // [[Rcpp::export]]
@@ -19,3 +20,4 @@ void whats_my_name(){
   std::cout << SeqLib::RCOMPLEMENT_TABLE;
   std::cout << "it's khagay" << std::endl; 
 }
+
