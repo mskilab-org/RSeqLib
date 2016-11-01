@@ -1,8 +1,6 @@
 #include <iostream>
 #include <Rcpp.h>
-#include "../headerFiles/SeqLibCommon.h"
-#include "../headerFiles/SeqLibUtils.h"
-#include "../SeqLib/SeqLib/FermiAssembler.h"
+#include "SeqLib/FermiAssembler.h"
 using namespace Rcpp;
 
 // [[Rcpp::export]]
