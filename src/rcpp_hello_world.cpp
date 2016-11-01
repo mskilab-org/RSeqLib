@@ -15,7 +15,13 @@ List rcpp_hello_world() {
 
 // [[Rcpp::export]]
 void whats_my_name(){
-  std::cout << SeqLib::RCOMPLEMENT_TABLE;
-  std::cout << "it's khagay" << std::endl; 
+  //std::cout << SeqLib::RCOMPLEMENT_TABLE;
+  //std::cout << "it's khagay" << std::endl;
+  SeqLib::FermiAssembler f;
 }
 
+// [[Rcpp::export]]
+void start_fermi(){
+  SeqLib::print_my_name();
+  
+}

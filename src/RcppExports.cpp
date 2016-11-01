@@ -24,3 +24,12 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// start_fermi
+void start_fermi();
+RcppExport SEXP SeqLib_start_fermi() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    start_fermi();
+    return R_NilValue;
+END_RCPP
+}

@@ -9,3 +9,7 @@ whats_my_name <- function() {
     invisible(.Call('SeqLib_whats_my_name', PACKAGE = 'SeqLib'))
 }
 
+start_fermi <- function() {
+    invisible(.Call('SeqLib_start_fermi', PACKAGE = 'SeqLib'))
+}
+
