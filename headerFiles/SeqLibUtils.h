@@ -84,4 +84,4 @@ namespace SeqLib {
        * @param a Sequence to be reverse complemented
        */
 }
-#endif 
+#endif
