@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Rcpp.h>
 #include "SeqLib/FermiAssembler.h"
+using namespace SeqLib; 
 using namespace Rcpp;
 
 // [[Rcpp::export]]
@@ -26,3 +27,7 @@ void whats_my_name(){
 void start_fermi(){
 }
 
+// [[Rcpp::export]]
+void fermi() {
+  SeqLib::FermiAssembler f;
+}

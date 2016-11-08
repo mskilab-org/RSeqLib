@@ -13,3 +13,7 @@ start_fermi <- function() {
     invisible(.Call('SeqLib_start_fermi', PACKAGE = 'SeqLib'))
 }
 
+fermi <- function() {
+    invisible(.Call('SeqLib_fermi', PACKAGE = 'SeqLib'))
+}
+

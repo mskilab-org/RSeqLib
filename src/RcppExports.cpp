@@ -33,3 +33,12 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// fermi
+void fermi();
+RcppExport SEXP SeqLib_fermi() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    fermi();
+    return R_NilValue;
+END_RCPP
+}
