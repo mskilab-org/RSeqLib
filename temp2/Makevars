@@ -1,0 +1,6 @@
+PKG_CXXFLAGS= -I../src/SeqLib
+PKG_CPPFLAGS+= -I../src/SeqLib/src
+
+all:
+	( cd SeqLib; ./configure; make; make install; )
+
