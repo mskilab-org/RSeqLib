@@ -1,6 +1,23 @@
-PKG_CXXFLAGS= -I../src/SeqLib
-PKG_CPPFLAGS+= -I../src/SeqLib/src
+## lazy set of variables. Variable values are expanded when they are referenced.
+	SEQ=`pwd`/SeqLib/
+	C_INCLUDE_PATH=$C_INCLUDE_PATH:$SEQ:$SEQ/htslib
+	LDFLAGS="$LDFLAGS -L$SEQ/bin/libseqlib.a -L$SEQ/bin/libbwa.a -L$SEQ/bin/libfml.a -L$SEQ/bin/libhts.a" )
 
 all:
-	( cd SeqLib; ./configure; make; make install; )
+	( cd SeqLib; ./configure; make)
+	( g++ -g -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ rcpp_hello_world.cpp -L/gpfs/commons/home/knagdimov/temp/seqLib/src/SeqLib/bin/)
+##	( g++ -g -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ rcpp_hello_world.cpp -l../src/SeqLib/bin )
 
+PKG_CXXFLAGS= -I../src/SeqLib/
+PKG_CXXFLAGS+= -I../htslib/
+
+##PKG_CXXFLAGS+= -I../src/SeqLib/src/
+## PKG_CXXFLAGS+= -I../sr
+##PKG_CXXFLAGS+= -I../src/SeqLib/htslib/
+## 	( cd SeqLib; cd htslib; autoconf; autoreconf --install; ./configure; make; )
+##	( cd SeqLib; ./configure; make; make install; make seqtools)
+##	( cd SeqLib; cd fermi-lite; make; )
+##	( SEQ=`cd SeqLib;pwd;`;C_INCLUDE_PATH=$C_INCLUDE_PATH:$SEQ:$SEQ/htslib;LDFLAGS="$LDFLAGS -L$SEQ/bin/libseqlib.a -L$SEQ/bin/libbwa.a -L$SEQ/bin/libfml.a -L$SEQ/bin/libhts.a")
+
+## ( g++ -L../src/SeqLib/bin/ -L../src/SeqLib/htslib/libhts.a -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ -o rcpp_hello_world.cpp SeqLib/src/BamRecord.cpp SeqLib/src/BamWriter.cpp SeqLib/src/BFC.cpp SeqLib/src/BWAWrapper.cpp SeqLib/src/FastqReader.cpp SeqLib/src/FermiAssembler.cpp SeqLib/src/GenomicRegion.cpp SeqLib/src/ReadFilter.cpp SeqLib/src/RefGenome.cpp SeqLib/src/SeqPlot.cpp SeqLib/src/jsoncpp.cpp SeqLib/src/ssw.c SeqLib/src/ssw_cpp.cpp )
+x
