@@ -1,23 +1,49 @@
 ## lazy set of variables. Variable values are expanded when they are referenced.
-	SEQ=`pwd`/SeqLib/
-	C_INCLUDE_PATH=$C_INCLUDE_PATH:$SEQ:$SEQ/htslib
-	LDFLAGS="$LDFLAGS -L$SEQ/bin/libseqlib.a -L$SEQ/bin/libbwa.a -L$SEQ/bin/libfml.a -L$SEQ/bin/libhts.a" )
+	#SEQ=`pwd`/SeqLib/
+	#C_INCLUDE_PATH=$C_INCLUDE_PATH:$SEQ:$SEQ/htslib
+	#LDFLAGS="$LDFLAGS -L$SEQ/bin/libseqlib.a -L$SEQ/bin/libbwa.a -L$SEQ/bin/libfml.a -L$SEQ/bin/libhts.a" )
+	INCLUDES=-I../src/SeqLib/SeqLib/ -I../src/SeqLib/fermi-lite/ -I../src/SeqLib/htslib/cram/ -I../src/SeqLib/htslib/htslib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/bwa/
+	LIBS=../src/SeqLib/bin/libbwa.a ../src/SeqLib/bin/libfml.a ../src/SeqLib/bin/libhts.a ../src/SeqLib/bin/libseqlib.a
 
 all:
-	( cd SeqLib; ./configure; make)
-	( g++ -g -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ rcpp_hello_world.cpp -L/gpfs/commons/home/knagdimov/temp/seqLib/src/SeqLib/bin/)
-##	( g++ -g -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ rcpp_hello_world.cpp -l../src/SeqLib/bin )
+	## now that I have the INCLUDES and LIBS flags, do I have to change the PKG parameters or can I run the g++ compiler on the rcpp_hello_world.cpp file.
+	( cd SeqLib; ./configure --enable-shared; make)
+	##( g++ -g -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ rcpp_hello_world.cpp -L/gpfs/commons/home/knagdimov/temp/seqLib/src/SeqLib/bin/)
+##	##( g++ -g -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ rcpp_hello_world.cpp -l../src/SeqLib/bin )
 
-PKG_CXXFLAGS= -I../src/SeqLib/
-PKG_CXXFLAGS+= -I../htslib/
+PKG_CPPFLAGS= -fPIC -I../src/SeqLib/ -I../src/SeqLib/fermi-lite/ -I../src/SeqLib/htslib/cram/ -I../src/SeqLib/htslib/htslib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/bwa/
+### export CXXFLAGS="$CXXFLAGS -fPIC"
+PKG_LIBS=-enable-shared-lib -L../src/SeqLib/bin/ -lbwa -lfml -lhts -lseqlib
+PKG_CXXFLAGS= -fPIC
 
-##PKG_CXXFLAGS+= -I../src/SeqLib/src/
-## PKG_CXXFLAGS+= -I../sr
-##PKG_CXXFLAGS+= -I../src/SeqLib/htslib/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##-l../src/SeqLib/bin/libbwa.a -l../src/SeqLib/bin/libfml.a -l../src/SeqLib/bin/libhts.a -l../src/SeqLib/bin/libseqlib.a -lrt 
+
 ## 	( cd SeqLib; cd htslib; autoconf; autoreconf --install; ./configure; make; )
 ##	( cd SeqLib; ./configure; make; make install; make seqtools)
 ##	( cd SeqLib; cd fermi-lite; make; )
 ##	( SEQ=`cd SeqLib;pwd;`;C_INCLUDE_PATH=$C_INCLUDE_PATH:$SEQ:$SEQ/htslib;LDFLAGS="$LDFLAGS -L$SEQ/bin/libseqlib.a -L$SEQ/bin/libbwa.a -L$SEQ/bin/libfml.a -L$SEQ/bin/libhts.a")
 
 ## ( g++ -L../src/SeqLib/bin/ -L../src/SeqLib/htslib/libhts.a -I../src/SeqLib/ -I../src/SeqLib/htslib/ -I../src/SeqLib/htslib/htslib/ -o rcpp_hello_world.cpp SeqLib/src/BamRecord.cpp SeqLib/src/BamWriter.cpp SeqLib/src/BFC.cpp SeqLib/src/BWAWrapper.cpp SeqLib/src/FastqReader.cpp SeqLib/src/FermiAssembler.cpp SeqLib/src/GenomicRegion.cpp SeqLib/src/ReadFilter.cpp SeqLib/src/RefGenome.cpp SeqLib/src/SeqPlot.cpp SeqLib/src/jsoncpp.cpp SeqLib/src/ssw.c SeqLib/src/ssw_cpp.cpp )
-x
+
+### need to do compiling first and linking after. 
+
+
+
