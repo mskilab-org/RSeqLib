@@ -2,7 +2,6 @@ useDynLib(subsetSeqLib)
 exportPattern("^[[:alpha:]]+")
 importFrom(Rcpp, evalCpp)
 
-
 import(GenomicAlignments)
 import(GenomicRanges)
 import(RSQLite)

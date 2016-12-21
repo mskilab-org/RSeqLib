@@ -1,33 +1,42 @@
-#include <iostream>
+
 #include <Rcpp.h>
-#include "SeqLib/FermiAssembler.h"
-using namespace SeqLib;
+#include "SeqLib/FastqReader.h"
 using namespace Rcpp;
+using namespace SeqLib;
 
 // [[Rcpp::export]]
 List rcpp_hello_world() {
 
-  CharacterVector x = CharacterVector::create( "foo", "bar" )  ;
-  NumericVector y   = NumericVector::create( 0.0, 1.0 ) ;
-  List z            = List::create( x, y ) ;
-  std::cout << "hey, how are you";
-  return z ;
+    CharacterVector x = CharacterVector::create( "foo", "bar" )  ;
+    NumericVector y   = NumericVector::create( 0.0, 1.0 ) ;
+    List z            = List::create( x, y ) ;
+
+    return z ;
 }
+
+// ################## S
+// ##################  E
+// ##################   Q
+// ##################    L
+// ##################     I
+// ##################      B
+
 
 // [[Rcpp::export]]
-void whats_my_name(){
-  //std::cout << SeqLib::RCOMPLEMENT_TABLE;
-  std::cout << "it's khagay" << std::endl;
-  //MAG_MIN_NSR_COEF .1
-  //if(MAG_MIN_NSR_COEF == .1)
-  //std::cout << "Hey, what's up!!!!!" << std::endl;
+bool fastqReader_Open(const std::string& f) {
+  // initialize object of type FastqReader;
+  SeqLib::FastqReader instance; 
+  
+  // check to see if file is available;
+  bool available = instance.Open(f);
+
+  return(available);
+  //bool available FastqReader::Open(f);
 }
 
-// [[Rcpp::export]]
-void start_fermi(){
-}
 
-// [[Rcpp::export]]
-void fermi() {
-}
-
+// ################## F
+// ##################  E
+// ##################   R
+// ##################    M
+// ##################     I

@@ -1,2 +1,1 @@
-PKG_CXXFLAGS= -I../src/SeqLib
-PKG_CPPFLAGS+= -I../src/SeqLib/src
+PKG_CXXFLAGS= -I../ -I../bwa/
