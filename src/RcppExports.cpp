@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // fastqReader_Open
 bool fastqReader_Open(const std::string& f);
-RcppExport SEXP subsetSeqLib_fastqReader_Open(SEXP fSEXP) {
+RcppExport SEXP RSeqLib_fastqReader_Open(SEXP fSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // createBamVector
 void createBamVector();
-RcppExport SEXP subsetSeqLib_createBamVector() {
+RcppExport SEXP RSeqLib_createBamVector() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     createBamVector();
@@ -27,7 +27,7 @@ END_RCPP
 }
 // createBamRecord
 void createBamRecord();
-RcppExport SEXP subsetSeqLib_createBamRecord() {
+RcppExport SEXP RSeqLib_createBamRecord() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     createBamRecord();
@@ -36,7 +36,7 @@ END_RCPP
 }
 // alignSequence
 void alignSequence(const std::string& seq, const std::string& name, bool hardclip, double keep_sec_with_frac_of_primary_score, int max_secondary);
-RcppExport SEXP subsetSeqLib_alignSequence(SEXP seqSEXP, SEXP nameSEXP, SEXP hardclipSEXP, SEXP keep_sec_with_frac_of_primary_scoreSEXP, SEXP max_secondarySEXP) {
+RcppExport SEXP RSeqLib_alignSequence(SEXP seqSEXP, SEXP nameSEXP, SEXP hardclipSEXP, SEXP keep_sec_with_frac_of_primary_scoreSEXP, SEXP max_secondarySEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string& >::type seq(seqSEXP);
@@ -50,7 +50,7 @@ END_RCPP
 }
 // load_index_from_sequence
 RcppExport SEXP load_index_from_sequence(std::string& querySeq, std::string& seqname);
-RcppExport SEXP subsetSeqLib_load_index_from_sequence(SEXP querySeqSEXP, SEXP seqnameSEXP) {
+RcppExport SEXP RSeqLib_load_index_from_sequence(SEXP querySeqSEXP, SEXP seqnameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -62,7 +62,7 @@ END_RCPP
 }
 // load_index_from_fasta
 std::string load_index_from_fasta(std::string& fasta);
-RcppExport SEXP subsetSeqLib_load_index_from_fasta(SEXP fastaSEXP) {
+RcppExport SEXP RSeqLib_load_index_from_fasta(SEXP fastaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -73,7 +73,7 @@ END_RCPP
 }
 // run_bwa
 std::string run_bwa(Rcpp::XPtr<int> bwap, std::string& querySeq);
-RcppExport SEXP subsetSeqLib_run_bwa(SEXP bwapSEXP, SEXP querySeqSEXP) {
+RcppExport SEXP RSeqLib_run_bwa(SEXP bwapSEXP, SEXP querySeqSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;

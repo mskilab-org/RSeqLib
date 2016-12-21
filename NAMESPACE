@@ -1,4 +1,4 @@
-useDynLib(subsetSeqLib)
+useDynLib(RSeqLib)
 exportPattern("^[[:alpha:]]+")
 importFrom(Rcpp, evalCpp)
 

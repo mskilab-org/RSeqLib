@@ -2,30 +2,30 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 fastqReader_Open <- function(f) {
-    .Call('subsetSeqLib_fastqReader_Open', PACKAGE = 'subsetSeqLib', f)
+    .Call('RSeqLib_fastqReader_Open', PACKAGE = 'RSeqLib', f)
 }
 
 createBamVector <- function() {
-    invisible(.Call('subsetSeqLib_createBamVector', PACKAGE = 'subsetSeqLib'))
+    invisible(.Call('RSeqLib_createBamVector', PACKAGE = 'RSeqLib'))
 }
 
 createBamRecord <- function() {
-    invisible(.Call('subsetSeqLib_createBamRecord', PACKAGE = 'subsetSeqLib'))
+    invisible(.Call('RSeqLib_createBamRecord', PACKAGE = 'RSeqLib'))
 }
 
 alignSequence <- function(seq, name, hardclip, keep_sec_with_frac_of_primary_score, max_secondary) {
-    invisible(.Call('subsetSeqLib_alignSequence', PACKAGE = 'subsetSeqLib', seq, name, hardclip, keep_sec_with_frac_of_primary_score, max_secondary))
+    invisible(.Call('RSeqLib_alignSequence', PACKAGE = 'RSeqLib', seq, name, hardclip, keep_sec_with_frac_of_primary_score, max_secondary))
 }
 
 load_index_from_sequence <- function(querySeq, seqname) {
-    .Call('subsetSeqLib_load_index_from_sequence', PACKAGE = 'subsetSeqLib', querySeq, seqname)
+    .Call('RSeqLib_load_index_from_sequence', PACKAGE = 'RSeqLib', querySeq, seqname)
 }
 
 load_index_from_fasta <- function(fasta) {
-    .Call('subsetSeqLib_load_index_from_fasta', PACKAGE = 'subsetSeqLib', fasta)
+    .Call('RSeqLib_load_index_from_fasta', PACKAGE = 'RSeqLib', fasta)
 }
 
 run_bwa <- function(bwap, querySeq) {
-    .Call('subsetSeqLib_run_bwa', PACKAGE = 'subsetSeqLib', bwap, querySeq)
+    .Call('RSeqLib_run_bwa', PACKAGE = 'RSeqLib', bwap, querySeq)
 }
 
