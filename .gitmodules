@@ -1,3 +1,6 @@
 [submodule "src/SeqLib"]
 	path = src/SeqLib
 	url = https://github.com/walaj/SeqLib.git
+[submodule "SeqLib"]
+	path = SeqLib
+	url = https://github.com/walaj/SeqLib
