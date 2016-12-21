@@ -1,0 +1,11 @@
+all:
+	( cd SeqLib; ./configure; make; )
+
+
+## the following flag is for the linking step.
+## PKG_CXXFLAGS= -
+
+## the following flags are for PreProcessor.
+PKG_CPPFLAGS= -I../ -ISeqLib/ -ISeqLib/bwa/ -ISeqLib/htslib/ -std=c++11 -fpic
+
+PKG_LIBS= -LSeqLib/src -LSeqLib/bwa -LSeqLib/htslib -LSeqLib/fermi-lite -lseqlib -lbwa -lhts -lfml
