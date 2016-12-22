@@ -2,18 +2,18 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 BWA__from_string <- function(xp, querySeq, seqname) {
-    invisible(.Call('rSeqLib_BWA__from_string', PACKAGE = 'rSeqLib', xp, querySeq, seqname))
+    invisible(.Call('RSeqLib_BWA__from_string', PACKAGE = 'RSeqLib', xp, querySeq, seqname))
 }
 
 BWA__from_fasta <- function(xp, fasta) {
-    invisible(.Call('rSeqLib_BWA__from_fasta', PACKAGE = 'rSeqLib', xp, fasta))
+    invisible(.Call('RSeqLib_BWA__from_fasta', PACKAGE = 'RSeqLib', xp, fasta))
 }
 
 BWA__query <- function(xp, qstring, qname, hardclip, keep_sec_with_frac_of_primary_score, max_secondary) {
-    .Call('rSeqLib_BWA__query', PACKAGE = 'rSeqLib', xp, qstring, qname, hardclip, keep_sec_with_frac_of_primary_score, max_secondary)
+    .Call('RSeqLib_BWA__query', PACKAGE = 'RSeqLib', xp, qstring, qname, hardclip, keep_sec_with_frac_of_primary_score, max_secondary)
 }
 
 fastqReader_Open <- function(f) {
-    .Call('rSeqLib_fastqReader_Open', PACKAGE = 'rSeqLib', f)
+    .Call('RSeqLib_fastqReader_Open', PACKAGE = 'RSeqLib', f)
 }
 
