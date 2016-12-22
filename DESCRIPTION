@@ -1,10 +1,12 @@
-Package: RSeqLib
+Package: rSeqLib
 Type: Package
 Title: What the Package Does in One 'Title Case' Line
 Version: 1.0
 Date: 2016-11-28
-Author: Khagay Nagdimov
-Maintainer: Your Name <your@email.com>
+Author: Authors@R: c(
+  person(given = "Jeremiah", family = "Wala", role = c("aut"), email = "jwala@broadinstitute.org"),
+  person(given = "Khagay", family = "Nagdimov", role = c("aut", "cre"), email = "nagdimov@nygenome.org"),	
+  person(given = "Marcin",  family = "Imielinski", role = c("aut"), email = mimielinski@nygenome.org"))
 Description: One paragraph description of what the package does as one
     or more full sentences.
 License: GPL (>= 2)
