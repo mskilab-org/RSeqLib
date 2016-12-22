@@ -5,6 +5,16 @@
 
 using namespace Rcpp;
 
+// BWA__new
+RcppExport SEXP BWA__new();
+RcppExport SEXP RSeqLib_BWA__new() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(BWA__new());
+    return rcpp_result_gen;
+END_RCPP
+}
 // BWA__from_string
 void BWA__from_string(SEXP xp, std::string& querySeq, std::string& seqname);
 RcppExport SEXP RSeqLib_BWA__from_string(SEXP xpSEXP, SEXP querySeqSEXP, SEXP seqnameSEXP) {

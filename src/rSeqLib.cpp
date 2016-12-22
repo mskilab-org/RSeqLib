@@ -56,6 +56,7 @@ private:
 using namespace Rcpp ;
 
 /** create an external pointer to a BWA object */
+// [[Rcpp::export]]
 RcppExport SEXP BWA__new(){
   return Rcpp::XPtr<BWA>( new BWA, true ) ;
 }
