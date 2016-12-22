@@ -1,5 +1,6 @@
-#' @useDynLib rSeqLib
+#' @useDynLib RSeqLib
 #' @importFrom Rcpp sourceCpp
+#' @import data.table reshape2
 NULL
 
 
@@ -9,7 +10,9 @@ NULL
 #' BWA class
 #' @export
 #' @author Marcin Imielinski
-setClass( "BWA", representation( bwa = "externalptr" ), contains = "externalptr" )
+setClass( "BWA", representation( bwa = "externalptr",
+                                params = "list"
+                                ), contains = "externalptr" )
 
 #' @name show
 #' @title show
@@ -17,7 +20,7 @@ setClass( "BWA", representation( bwa = "externalptr" ), contains = "externalptr"
 #' @author Marcin Imielinski
 setMethod('show', 'BWA', function(object)
 {
-  message(sprintf('RSeqLib BWA object'))
+  message('RSeqLib BWA object with params ', paste(names(object@params), '=', unlist(object@params), collapse = ', '))
 })
 
 
@@ -25,9 +28,19 @@ setMethod('show', 'BWA', function(object)
 #' @title load_index
 #' @description load_index
 #' @export 
-setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqname = 'seq')
+setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqname = 'seq',
+                                        mc.cores = 1,
+                                        hardclip = FALSE,
+                                        keep_sec_with_frac_of_primary_score = 0.9,
+                                        max_secondary = 10
+                                        )
 {
     .Object@bwa =.Call(BWA_method( "new" ))
+    .Object@params = list(
+        mc.cores = mc.cores,
+        hardclip = hardclip,
+        keep_sec_with_frac_of_primary_score = keep_sec_with_frac_of_primary_score,
+        max_secondary = max_secondary)
     if (!is.null(fasta))
         BWA__from_fasta(.Object@bwa, fasta)
     else if (!is.null(seq))
@@ -46,21 +59,52 @@ BWA_method <- function(name){
 #' @title  BWA
 #' @description BWA
 #' @export
-BWA = function( fasta = NULL, seq = NULL, seqname = 'myseq')
+BWA = function( fasta = NULL, seq = NULL, seqname = 'myseq', mc.cores = 1,
+                                        hardclip = FALSE,
+                                        keep_sec_with_frac_of_primary_score = 0.9,
+                                        max_secondary = 10)
 {
-     new('BWA', fasta = fasta, seq = seq, seqname = seqname)
+    new('BWA', fasta = fasta, seq = seq, seqname = seqname,
+        mc.cores,
+        hardclip,
+        keep_sec_with_frac_of_primary_score,
+        max_secondary)
 }
 
-#' @name callMethod
-#' @title callMethod
-#' @description callMethod
+#' @name getparam
+#' @title getparam
+#' @description setparam
 #' @export
-setMethod( "$", "BWA", function(x, name){
-    if (name == 'query')
-        .query(x@bwa,...)
-    else        
-        function(...) .Call( BWA_method(name), x@bwa , ... )
-     } )
+ setMethod('$', 'BWA', function(x, name)
+{
+    return(x@params[[name]])
+})
+
+
+#' @name $<-
+#' @title $<-
+#' @description
+#'
+#' Setting query params of BWA object 
+#'
+#' Usage:
+#' bwa$mc.cores = 10
+#' bwa$max_secondary = 5
+#'
+#' @param x \code{BWA} object to alter \code{params} field of
+#' @param name \code{params} field to alter
+#' @param value New value
+#' @docType methods
+#' @rdname cash-set-methods
+#' @aliases $<-,BWA-method
+#' @export
+#' @author Marcin Imielinski
+setMethod('$<-', 'BWA', function(x, name, value)
+{
+  x@params[[name]] = value
+  return(x)
+})
+
 
 #' @name query
 #' @title query
@@ -68,7 +112,7 @@ setMethod( "$", "BWA", function(x, name){
 #' @export
 setGeneric('query', function(.Object,...) standardGeneric('query'))
 setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
-                                   mc.cores = 1,
+                                   mc.cores = .Object$mc.cores,
                   hardclip = FALSE,
                   keep_sec_with_frac_of_primary_score = 0.9,
                   max_secondary = 10)
@@ -79,9 +123,9 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
         qname = rep(qname, length(qstring))
     
     tmp = unlist(mcmapply(function(q, qn)
-        BWA__query(.Object@bwa, q, qn, hardclip,
+        strsplit(BWA__query(.Object@bwa, q, qn, hardclip,
                    keep_sec_with_frac_of_primary_score,
-                   max_secondary), qstring, qname, mc.cores = mc.cores))
+                   max_secondary), '\n'), qstring, qname, mc.cores = mc.cores))
     
     if (sum(nchar(tmp))==0)
         return(GRanges())
@@ -90,12 +134,18 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
     return(tmp)
 })
 
+
+#' @name [
+#' @title [
+#' @description  query
+#' @export
+setMethod("[", "BWA", function(x, i) query(x, i))                                      
+
 .parse_bam = function(lines, tags = NULL)
 {
     fields = c('qname', 'flag', 'rname', 'pos', 'mapq', 'cigar', 'rnext', 'pnext', 'tlen', 'seq', 'qual')
-    lines = gsub('\n', '', lines)
+#    lines = gsub('\n', '', lines)   
     linesp = strsplit(lines, '\t')
-
     chunk = data.table::as.data.table(do.call(rbind, lapply(linesp, function(x) x[1:11])))
     chunk$line = 1:length(chunk$V1)
     ## figure out the optional columns of the BAM read and annotate them. 

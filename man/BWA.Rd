@@ -4,7 +4,9 @@
 \alias{BWA}
 \title{BWA}
 \usage{
-BWA(fasta = NULL, seq = NULL, seqname = "myseq")
+BWA(fasta = NULL, seq = NULL, seqname = "myseq", mc.cores = 1,
+  hardclip = FALSE, keep_sec_with_frac_of_primary_score = 0.9,
+  max_secondary = 10)
 }
 \description{
 BWA

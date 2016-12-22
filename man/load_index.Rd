@@ -6,7 +6,8 @@
 \title{load_index}
 \usage{
 \S4method{initialize}{BWA}(.Object, fasta = NULL, seq = NULL,
-  seqname = "seq")
+  seqname = "seq", mc.cores = 1, hardclip = FALSE,
+  keep_sec_with_frac_of_primary_score = 0.9, max_secondary = 10)
 }
 \description{
 load_index
