@@ -1,0 +1,9 @@
+#!/bin/sh
+export CFLAGS=" -fPIC";
+export CPPFLAGS=" -std=c++98 -fPIC";
+echo "package base is $PKG_BASE"
+cd SeqLib;
+#make clean;
+./configure; make;
+cd ../;
+
