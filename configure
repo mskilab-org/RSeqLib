@@ -1,6 +1,6 @@
 #!/bin/sh
 export CFLAGS=" -fPIC";
-export CPPFLAGS=" -std=c++98 -fPIC";
+export CPPFLAGS=" -fPIC";
 echo "Copying fPIC Makefile into SeqLib/bwa/Makefile"
 cp Makefile.lh3.fPIC SeqLib/bwa/Makefile
 cd SeqLib;
