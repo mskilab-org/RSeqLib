@@ -44,6 +44,8 @@ public:
     //  print results to stdout
     for (auto& i : results)
       stream << i << std::endl;
+
+    std::cout << results.size() << std::endl;
     
     std::string str =  stream.str();  
     return(str);
@@ -56,7 +58,7 @@ private:
 using namespace Rcpp ;
 
 /** create an external pointer to a BWA object */
-// [[Rcpp::export]]
+// [[Rcpp:>:export]]
 RcppExport SEXP BWA__new(){
   return Rcpp::XPtr<BWA>( new BWA, true ) ;
 }

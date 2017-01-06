@@ -3,7 +3,7 @@ LIB_BASE = -Wl,-rpath,$(PKG_BASE)
 PKG_CPPFLAGS = -I$(PKG_BASE)SeqLib/ -I$(PKG_BASE)SeqLib/Seqlib -I$(PKG_BASE)SeqLib/bwa/ -I$(PKG_BASE)SeqLib/htslib/ -std=c++11 -fPIC
 PKG_CXXFLAGS = -I$(PKG_BASE)SeqLib/ -I$(PKG_BASE)SeqLib/Seqlib  -I$(PKG_BASE)SeqLib/bwa/ -I$(PKG_BASE)SeqLib/htslib/ -std=c++11 -fPIC 
 #PKG_LIBS = -L$(PKG_BASE)/SeqLib   -L$(PKG_BASE)SeqLib/src -L$(PKG_BASE)SeqLib/bwa -L$(PKG_BASE)SeqLib/htslib/ -L$(PKG_BASE)SeqLib/fermi-lite -lseqlib -lbwa  -lfml
-PKG_LIBS =  -L$(PKG_BASE)/SeqLib   -L$(PKG_BASE)SeqLib/src -L$(PKG_BASE)SeqLib/bwa -L$(PKG_BASE)SeqLib/htslib/ -L$(PKG_BASE)SeqLib/fermi-lite  $(LIB_BASE)/SeqLib   $(LIB_BASE)SeqLib/src $(LIB_BASE)SeqLib/bwa $(LIB_BASE)SeqLib/htslib/ $(LIB_BASE)SeqLib/fermi-lite -lseqlib -lbwa -lhts -lfml
+PKG_LIBS =  -L$(PKG_BASE)/SeqLib   -L$(PKG_BASE)SeqLib/src -L$(PKG_BASE)SeqLib/bwa -L$(PKG_BASE)SeqLib/htslib/ -L$(PKG_BASE)SeqLib/fermi-lite  $(LIB_BASE)/SeqLib   $(LIB_BASE)SeqLib/src $(LIB_BASE)SeqLib/bwa $(LIB_BASE)SeqLib/htslib/ $(LIB_BASE)SeqLib/fermi-lite -lseqlib -lbwa -lhts -lfml -l:libhts.so.2
 
 
 
