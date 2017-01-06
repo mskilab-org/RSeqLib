@@ -4,15 +4,6 @@ export CPPFLAGS=" -fPIC";
 echo "Copying fPIC Makefile into SeqLib/bwa/Makefile"
 cp Makefile.lh3.fPIC SeqLib/bwa/Makefile
 cd SeqLib;
-echo "The current working directory is: ";
-echo $PWD;
-pwd;
-echo "That was it";
-##export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${PWD}/htslib/
-##export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/gpfs/commons/home/knagdimov/temp/git/RSeqLib/SeqLib/htslib/"
-echo $LD_LIBRARY_PATH;
-ln -s ${PWD}/htslib/libhts.so.2 /gpfs/commons/home/knagdimov/temp/git/RSeqLib/SeqLib/htslib/libhts.so
-echo "Sym link made!"
 #make clean;
 ./configure;
 make;
