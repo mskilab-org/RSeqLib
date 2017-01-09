@@ -51,6 +51,10 @@ public:
     return(str);
   }
 
+  void secondary_alignments(){
+    
+  }
+
 private:
   Rcpp::XPtr<BWAWrapper> bwa;
 };
