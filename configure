@@ -3,8 +3,18 @@ export CFLAGS=" -fPIC";
 export CPPFLAGS=" -fPIC";
 echo "Copying fPIC Makefile into SeqLib/bwa/Makefile"
 cp Makefile.lh3.fPIC SeqLib/bwa/Makefile
+
+echo "Copying fPIC Makefile into SeqLib/htslib/Makefile"
+head -n 100 Makefile.htslib.fPIC
+cp Makefile.htslib.fPIC SeqLib/htslib/Makefile
+
 cd SeqLib;
-#make clean;
+make clean;
 ./configure;
 make;
 cd ../;
+mkdir -p libs
+echo "HAHAHAHAHHAHAHAHA$!%!@)%(@!*)%@(!*)%!(*%@)(*)"
+rm ./SeqLib/htslib/libhts.so
+rm ./SeqLib/htslib/libhts.so.2
+
