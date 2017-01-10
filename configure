@@ -2,7 +2,7 @@
 export CFLAGS=" -fPIC";
 export CPPFLAGS=" -fPIC";
 
-if [! -e SeqLib ]; then
+if [ ! -e SeqLib ]; then
     mv SeqLib.local SeqLib
 fi
 
