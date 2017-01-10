@@ -14,8 +14,6 @@ fi
 
 ls -alh $SEQLIB
 
-exit
-
 echo "Copying fPIC Makefile into $SEQLIB/bwa/Makefile"
 cp Makefile.lh3.fPIC $SEQLIB/bwa/Makefile
 
