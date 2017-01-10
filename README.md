@@ -54,6 +54,15 @@ ls.str('package:RSeqLib')
     query : Formal class 'standardGeneric' [package "methods"] with 8 slots
 
 
+## create a bwa object by using the BWA() function and supply a random reference fasta to it. 
+bwa <- BWA(seq = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG")
+## query two sequences with the reference fasta. 
+## notice the result is in a GRanges format and there is a cigar field. 
+query(bwa, c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG"))
+
+
+
+
 
 ```R
 
