@@ -1,31 +1,34 @@
 #!/bin/sh
 export CFLAGS=" -fPIC";
 export CPPFLAGS=" -fPIC";
+export SEQLIB="SeqLib";
+
 
 if [ ! -d SeqLib/SeqLib ]; then
     echo "CREATING DIRECTORY!!"
-    mv SeqLib.local SeqLib
+    export SEQLIB="SeqLib.local"
+#    mv SeqLib.local SeqLib
 else
     echo "WHAT THE HELL!??"
 fi
 
-ls -alh SeqLib
+ls -alh $SEQLIB
 
 exit
 
-echo "Copying fPIC Makefile into SeqLib/bwa/Makefile"
-cp Makefile.lh3.fPIC SeqLib/bwa/Makefile
+echo "Copying fPIC Makefile into $SEQLIB/bwa/Makefile"
+cp Makefile.lh3.fPIC $SEQLIB/bwa/Makefile
 
-echo "Copying fPIC Makefile into SeqLib/htslib/Makefile"
+echo "Copying fPIC Makefile into $SEQLIB/htslib/Makefile"
 head -n 100 Makefile.htslib.fPIC
-cp Makefile.htslib.fPIC SeqLib/htslib/Makefile
+cp Makefile.htslib.fPIC $SEQLIB/htslib/Makefile
 
-cd SeqLib;
+cd $SEQLIB;
 make clean;
 ./configure;
 make;
 cd ../;
 mkdir -p libs
-rm -f ./SeqLib/htslib/libhts.so
-rm -f ./SeqLib/htslib/libhts.so.2
+rm -f ./$SEQLIB/htslib/libhts.so
+rm -f ./$SEQLIB/htslib/libhts.so.2
 
