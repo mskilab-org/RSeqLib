@@ -56,7 +56,7 @@ ls.str('package:RSeqLib')
 ```R
 ## create a bwa object by using the BWA() function and supply a random reference fasta to it. 
 bwa <- BWA(seq = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG")
-## query two sequences with the reference fasta. 
+## align two sequences with the reference fasta. 
 ## notice the result is in a GRanges format and there is a cigar field. 
 query(bwa, c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG"))
 ```
