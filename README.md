@@ -61,6 +61,7 @@ bwa <- BWA(seq = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG")
 query(bwa, c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG"))
 ```
 
+```
 GRanges object with 2 ranges and 12 metadata columns:                                                                         
       seqnames    ranges strand |       qname        flag        mapq                                              
          <Rle> <IRanges>  <Rle> | <character> <character> <character>
@@ -80,7 +81,7 @@ GRanges object with 2 ranges and 12 metadata columns:
   [2]        35
   -------
   seqinfo: 1 sequence from an unspecified genome; no seqlengths
-
+```
 ```R
 
 ```
