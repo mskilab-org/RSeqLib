@@ -3,13 +3,8 @@ export CFLAGS=" -fPIC";
 export CPPFLAGS=" -fPIC";
 export SEQLIB="SeqLib";
 
-
 if [ ! -d SeqLib/SeqLib ]; then
-    echo "CREATING DIRECTORY!!"
     export SEQLIB="SeqLib.local"
-#    mv SeqLib.local SeqLib
-else
-    echo "WHAT THE HELL!??"
 fi
 
 ls -alh $SEQLIB
