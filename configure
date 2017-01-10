@@ -3,6 +3,7 @@ export CFLAGS=" -fPIC";
 export CPPFLAGS=" -fPIC";
 
 if [ ! -e SeqLib ]; then
+    echo "COPYING OVER!!!"
     mv SeqLib.local SeqLib
 fi
 
