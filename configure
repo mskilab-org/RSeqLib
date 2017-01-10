@@ -14,7 +14,6 @@ make clean;
 make;
 cd ../;
 mkdir -p libs
-echo "HAHAHAHAHHAHAHAHA$!%!@)%(@!*)%@(!*)%!(*%@)(*)"
-rm ./SeqLib/htslib/libhts.so
-rm ./SeqLib/htslib/libhts.so.2
+rm -f ./SeqLib/htslib/libhts.so
+rm -f ./SeqLib/htslib/libhts.so.2
 
