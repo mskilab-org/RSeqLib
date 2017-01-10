@@ -1,7 +1,6 @@
 PKG_BASE = $(shell pwd)/../
-SEQLIB = $(shell echo $$SEQLIB)
 LIB_BASE = -Wl,-rpath,$(PKG_BASE)
-PKG_CPPFLAGS = -I$(PKG_BASE)$(SEQLIB)/ -I$(PKG_BASE)$(SEQLIB)/Seqlib -I$(PKG_BASE)$(SEQLIB)/bwa/ -I$(PKG_BASE)$(SEQLIB)/htslib/ -std=c++11 -fPIC
-PKG_CXXFLAGS = -I$(PKG_BASE)$(SEQLIB)/ -I$(PKG_BASE)$(SEQLIB)/Seqlib  -I$(PKG_BASE)$(SEQLIB)/bwa/ -I$(PKG_BASE)$(SEQLIB)/htslib/ -std=c++11 -fPIC 
-PKG_LIBS = -L$(PKG_BASE)/$(SEQLIB)   -L$(PKG_BASE)$(SEQLIB)/src -L$(PKG_BASE)$(SEQLIB)/bwa -L$(PKG_BASE)$(SEQLIB)/htslib/ -L$(PKG_BASE)$(SEQLIB)/fermi-lite -lseqlib -lbwa  -lfml -lhts
+PKG_CPPFLAGS = -I$(PKG_BASE)SeqLib/ -I$(PKG_BASE)SeqLib/Seqlib -I$(PKG_BASE)SeqLib/bwa/ -I$(PKG_BASE)SeqLib/htslib/ -std=c++11 -fPIC
+PKG_CXXFLAGS = -I$(PKG_BASE)SeqLib/ -I$(PKG_BASE)SeqLib/Seqlib  -I$(PKG_BASE)SeqLib/bwa/ -I$(PKG_BASE)SeqLib/htslib/ -std=c++11 -fPIC 
+PKG_LIBS = -L$(PKG_BASE)/SeqLib   -L$(PKG_BASE)SeqLib/src -L$(PKG_BASE)SeqLib/bwa -L$(PKG_BASE)SeqLib/htslib/ -L$(PKG_BASE)SeqLib/fermi-lite -lseqlib -lbwa  -lfml -lhts
 
