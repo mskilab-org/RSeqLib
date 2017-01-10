@@ -1,4 +1,5 @@
 PKG_BASE = $(shell pwd)/../
+SEQLIB = $(shell echo $$SEQLIB)
 LIB_BASE = -Wl,-rpath,$(PKG_BASE)
 PKG_CPPFLAGS = -I$(PKG_BASE)$(SEQLIB)/ -I$(PKG_BASE)$(SEQLIB)/Seqlib -I$(PKG_BASE)$(SEQLIB)/bwa/ -I$(PKG_BASE)$(SEQLIB)/htslib/ -std=c++11 -fPIC
 PKG_CXXFLAGS = -I$(PKG_BASE)$(SEQLIB)/ -I$(PKG_BASE)$(SEQLIB)/Seqlib  -I$(PKG_BASE)$(SEQLIB)/bwa/ -I$(PKG_BASE)$(SEQLIB)/htslib/ -std=c++11 -fPIC 
