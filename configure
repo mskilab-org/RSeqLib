@@ -5,6 +5,8 @@ export CPPFLAGS=" -fPIC";
 if [ ! -e SeqLib ]; then
     echo "COPYING OVER!!!"
     mv SeqLib.local SeqLib
+else
+    echo "WHAT THE HELL!??"
 fi
 
 echo "Copying fPIC Makefile into SeqLib/bwa/Makefile"
