@@ -8,6 +8,10 @@ echo "Copying fPIC Makefile into SeqLib/htslib/Makefile"
 head -n 100 Makefile.htslib.fPIC
 cp Makefile.htslib.fPIC SeqLib/htslib/Makefile
 
+if [ -e SeqLib ]; then
+    mv SeqLib.local SeqLib
+fi
+
 cd SeqLib;
 make clean;
 ./configure;
