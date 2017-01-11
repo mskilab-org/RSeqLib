@@ -36,10 +36,6 @@ install_local('~/temp/git/RSeqLib')
     “replacing previous import ‘data.table::dcast’ by ‘reshape2::dcast’ when loading ‘RSeqLib’”
 
 ## Examples 
------------
-
-
-
 
 ```R
 ## via functions available in package.
