@@ -92,7 +92,7 @@ query(bwa, c("TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT"))
 ```
 7                                                                                                        
 GRanges object with 7 ranges and 12 metadata columns:      
-seqnames                 ranges strand |       qname        flag                                                              <Rle>              <IRanges>  <Rle> | <character> <character>                                                         
+    seqnames                 ranges strand |       qname        flag                                                              <Rle>              <IRanges>  <Rle> | <character> <character>                                                         
 [1]        1 [    12060,     12119]      + |     myquery           0                                                         
 [2]       23 [155257601, 155257660]      - |     myquery         272                                                         
 [3]       15 [102519049, 102519108]      - |     myquery         272                                                         
@@ -100,8 +100,8 @@ seqnames                 ranges strand |       qname        flag                
 [5]        9 [    12173,     12232]      + |     myquery         256                                                         
 [6]        2 [114358895, 114358954]      - |     myquery         272                                                         
 [7]       12 [    93488,     93547]      - |     myquery         272                                                         
-mapq       cigar       rnext       pnext        tlen                                                                 
-<character> <character> <character> <character> <character>                                                             
+    mapq       cigar       rnext       pnext        tlen                                                                 
+    <character> <character> <character> <character> <character>                                                             
 [1]           0         60M           0          -1           0                                                             
 [2]           0         60M           0          -1           0                                                             
 [3]           0         60M           0          -1           0                                                             
@@ -109,8 +109,8 @@ mapq       cigar       rnext       pnext        tlen
 [5]           0         60M           0          -1           0                                                             
 [6]           0         60M           0          -1           0                                                             
 [7]           0         60M           0          -1           0                                                             
-seq        qual                                                                                                      
-<character> <character>                                                 
+    seq        qual                                                                                                      
+    <character> <character>                                                 
 [1] TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT           *                                                 
 [2] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
 [3] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
@@ -118,8 +118,8 @@ seq        qual
 [5] TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT           *                                                 
 [6] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
 [7] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
-AS        DD    qwidth                                                                                               
-<integer> <integer> <integer>                                                                                           
+    AS        DD    qwidth                                                                                               
+    <integer> <integer> <integer>                                                                                           
 [1]        60         0        60                                                                                           
 [2]        60         0        60                                                                                           
 [3]        60         0        60                                                                                           
