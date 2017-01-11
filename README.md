@@ -35,8 +35,8 @@ install_local('~/temp/git/RSeqLib')
     “replacing previous import ‘data.table::melt’ by ‘reshape2::melt’ when loading ‘RSeqLib’”Warning message:
     “replacing previous import ‘data.table::dcast’ by ‘reshape2::dcast’ when loading ‘RSeqLib’”
 
-Examples 
---------
+## Examples 
+-----------
 
 
 
