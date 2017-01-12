@@ -8,20 +8,10 @@ R interface to SeqLib C++ package
 
 ## Installation
 
-
-```bash 
-# Clone repository in a directory 
-cd ~/temp/git/
-git clone --recursive git@github.com:mskilab/RSeqLib.git
-```
-
-
-
 ```R
-## install package via devtools::load_all(). Future plans: get install_local() and install_github() to work. 
+## install package via devtools::install_github().
 library(devtools)
-setwd('~/temp/git/RSeqLib')
-install_local('~/temp/git/RSeqLib')
+install_github('mskilab/RSeqLib')
 
 ```
 
