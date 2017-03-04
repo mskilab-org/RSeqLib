@@ -110,3 +110,8 @@ bool fastqReader_Open(const std::string& f) {
   return(available);
   //bool available FastqReader::Open(f);
 }
+
+// [[Rcpp::export]]
+void run_fermi(){
+  FermiAssembler f;
+}
