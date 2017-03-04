@@ -13,8 +13,10 @@ echo "Copying fPIC Makefile into $SEQLIB/bwa/Makefile"
 cp Makefile.lh3.fPIC $SEQLIB/bwa/Makefile
 
 echo "Copying fPIC Makefile into $SEQLIB/htslib/Makefile"
-head -n 100 Makefile.htslib.fPIC
 cp Makefile.htslib.fPIC $SEQLIB/htslib/Makefile
+
+echo "Copying fPIC Makefile into $SEQLIB/fermi-lite/Makefile"
+cp Makefile.fermi.fPIC $SEQLIB/fermi-lite/Makefile
 
 cd $SEQLIB;
 make clean;
