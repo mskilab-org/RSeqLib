@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/mskilab/RSeqLib.svg?branch=master)](https://travis-ci.org/mskilab/RSeqLib)
+[![codecov.io](https://img.shields.io/codecov/c/github/mskilab/RSeqLib.svg)](https://codecov.io/github/mskilab/RSeqLib?branch=master)
+
+
 
 # RSeqLib
 R interface to SeqLib C++ package 
