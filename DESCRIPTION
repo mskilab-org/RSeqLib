@@ -7,8 +7,10 @@ Author: Authors@R: c(
   person(given = "Jeremiah", family = "Wala", role = c("aut"), email = "jwala@broadinstitute.org"),
   person(given = "Khagay", family = "Nagdimov", role = c("aut", "cre"), email = "knagdimov@nygenome.org"),	
   person(given = "Marcin",  family = "Imielinski", role = c("aut"), email = mimielinski@nygenome.org"))
+Maintainer: Marcin Imielinski <mimielinski@nygenome.org>
 Description: One paragraph description of what the package does as one
     or more full sentences.
+Maintainer: 
 License: GPL (>= 2)
 Depends:
     gUtils,
