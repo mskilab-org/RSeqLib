@@ -10,7 +10,6 @@ Author: Authors@R: c(
 Maintainer: Marcin Imielinski <mimielinski@nygenome.org>
 Description: One paragraph description of what the package does as one
     or more full sentences.
-Maintainer: 
 License: GPL (>= 2)
 Depends:
     gUtils,
