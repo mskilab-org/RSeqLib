@@ -41,12 +41,15 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
         hardclip = hardclip,
         keep_sec_with_frac_of_primary_score = keep_sec_with_frac_of_primary_score,
         max_secondary = max_secondary)
-    if (!is.null(fasta))
+    if (!is.null(fasta)) {
         BWA__from_fasta(.Object@bwa, fasta)
-    else if (!is.null(seq))
+    }
+    else if (!is.null(seq)) {
         BWA__from_string(.Object@bwa, seq, seqname)
-    else
+    }
+    else {
         stop('Either fasta or sequence must be provided')
+    }
     return(.Object)
 })
 
@@ -117,18 +120,20 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
                   keep_sec_with_frac_of_primary_score = 0.9,
                   max_secondary = 10)
 {
-    if (!is.null(names(qstring)))
+    if (!is.null(names(qstring))) {
         qname = names(qstring)
-    else if (length(qname)==1)
+    }
+    else if (length(qname)==1) {
         qname = rep(qname, length(qstring))
-    
+    }
     tmp = unlist(mcmapply(function(q, qn)
         strsplit(BWA__query(.Object@bwa, q, qn, hardclip,
                    keep_sec_with_frac_of_primary_score,
                    max_secondary), '\n'), qstring, qname, mc.cores = mc.cores))
     
-    if (sum(nchar(tmp))==0)
+    if (sum(nchar(tmp))==0) {
         return(GRanges())
+    }
     
     tmp = .parse_bam(tmp)
     return(tmp)
@@ -200,28 +205,35 @@ munlist = function(x, force.rbind = F, force.cbind = F, force.list = F)
   {
     if (!any(c(force.list, force.cbind, force.rbind)))
       {
-        if (any(sapply(x, function(y) is.null(dim(y)))))
-          force.list = T
-        if (length(unique(sapply(x, function(y) dim(y)[2]))) == 1)
-          force.rbind = T
-        if ((length(unique(sapply(x, function(y) dim(y)[1]))) == 1))
-          force.cbind = T
+        if (any(sapply(x, function(y) is.null(dim(y))))) {
+            force.list = T
+        }
+        if (length(unique(sapply(x, function(y) dim(y)[2]))) == 1) {
+            force.rbind = T
+        }
+        if ((length(unique(sapply(x, function(y) dim(y)[1]))) == 1)) {
+            force.cbind = T
+        }
       }
-    else
-      force.list = T
+    else {
+          force.list = T
+    }
 
-    if (force.list)
+    if (force.list) {
       return(cbind(ix = unlist(lapply(1:length(x), function(y) rep(y, length(x[[y]])))),
                    iix = unlist(lapply(1:length(x), function(y) if (length(x[[y]])>0) 1:length(x[[y]]) else NULL)),
                    unlist(x)))
-    else if (force.rbind)
+    }
+    else if (force.rbind) {
       return(cbind(ix = unlist(lapply(1:length(x), function(y) rep(y, nrow(x[[y]])))),
                    iix = unlist(lapply(1:length(x), function(y) if (nrow(x[[y]])>0) 1:nrow(x[[y]]) else NULL)),
                    do.call('rbind', x)))
-    else if (force.cbind)
+    }
+    else if (force.cbind) {
       return(t(rbind(ix = unlist(lapply(1:length(x), function(y) rep(y, ncol(x[[y]])))),
                      iix = unlist(lapply(1:length(x), function(y) if (ncol(x[[y]])>0) 1:ncol(x[[y]]) else NULL)),
-                   do.call('cbind', x))))
+                     do.call('cbind', x))))
+    }
   }
 
 
@@ -266,10 +278,12 @@ countCigar <- function(cigar) {
 
 bamflag = function(reads)
 {
-    if (inherits(reads, 'GappedAlignments') | inherits(reads, 'data.frame') | inherits(reads, 'GRanges'))
+    if (inherits(reads, 'GappedAlignments') | inherits(reads, 'data.frame') | inherits(reads, 'GRanges')) {
         bf = reads$flag
-    else
+    }
+    else {
         bf = reads
+    }
 
     out = matrix(as.numeric(intToBits(bf)), byrow = T, ncol = 32)[, 1:12, drop = FALSE]
     colnames(out) = c('isPaired', 'isProperPair', 'isUnmappedQuery', 'hasUnmappedMate', 'isMinusStrand', 'isMateMinusStrand', 'isFirstMateRead', 'isSecondMateRead', 'isNotPrimaryRead', 'isNotPassingQualityControls', 'isDuplicate', 'isSupplementary')
