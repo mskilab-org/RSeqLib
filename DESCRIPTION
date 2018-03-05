@@ -20,5 +20,10 @@ Imports:
     reshape2,
     GenomicAlignments,
     data.table
+Suggests:
+    BSgenome.Hsapiens.UCSC.hg19,
+    testthat,
+    rtracklayer
+BugReports: http://github.com/mskilab/RSeqLib/issues
 LinkingTo: Rcpp
 RoxygenNote: 5.0.1
