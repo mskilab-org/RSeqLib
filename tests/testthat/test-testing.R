@@ -18,5 +18,6 @@ test_that("BWA_method works", {
 })
 
 test_that("query works", {
+    bwa <- BWA(seq = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG")
     expect_equal(typeof(query(bwa, c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG"))), "S4")
 })
