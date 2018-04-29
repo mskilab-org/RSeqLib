@@ -66,7 +66,10 @@ class Fermi {
 public:
 
   Fermi() : fermiAssembler(new FermiAssembler) {}
-  
+
+  void print_random_string(){
+    std::cout << "hello" << endl;
+  }
 
 private:
   Rcpp::XPtr<FermiAssembler> fermiAssembler;
