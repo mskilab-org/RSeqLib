@@ -115,3 +115,15 @@ bool fastqReader_Open(const std::string& f) {
 void run_fermi(){
   FermiAssembler f;
 }
+
+
+// Fermi
+
+class Fermi {
+public:
+
+  Fermi() : 
+
+private:
+  Rcpp::XPtr<FermiAssembler> fermiAssembler;
+};
