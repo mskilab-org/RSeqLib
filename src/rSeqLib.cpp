@@ -67,23 +67,12 @@ public:
 
   Fermi() : fermiAssembler(new FermiAssembler) {}
 
-  void print_random_string(){
-    std::cout << "hello" << endl;
-  }
-
 private:
   Rcpp::XPtr<FermiAssembler> fermiAssembler;
 };
 
 
 using namespace Rcpp ;
-
-/** create an external pointer to a Fermi object */
-// [[Rcpp::export]]
-RcppExport SEXP FERMI__new(){
-  return Rcpp::XPtr<Fermi>( new Fermi, true ) ;
-}
-
 
 /** create an external pointer to a BWA object */
 // [[Rcpp::export]]
