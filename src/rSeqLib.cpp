@@ -116,14 +116,3 @@ void run_fermi(){
   FermiAssembler f;
 }
 
-
-// Fermi
-
-class Fermi {
-public:
-
-  Fermi() : 
-
-private:
-  Rcpp::XPtr<FermiAssembler> fermiAssembler;
-};
