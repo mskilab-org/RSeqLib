@@ -75,6 +75,13 @@ private:
 
 using namespace Rcpp ;
 
+/** create an external pointer to a Fermi object */
+// [[Rcpp::export]]
+RcppExport SEXP FERMI__new(){
+  return Rcpp::XPtr<Fermi>( new Fermi, true ) ;
+}
+
+
 /** create an external pointer to a BWA object */
 // [[Rcpp::export]]
 RcppExport SEXP BWA__new(){
