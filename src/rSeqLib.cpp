@@ -59,6 +59,20 @@ private:
   Rcpp::XPtr<BWAWrapper> bwa;
 };
 
+
+// Fermi
+
+class Fermi {
+public:
+
+  Fermi() : fermiAssembler(new FermiAssembler) {}
+  
+
+private:
+  Rcpp::XPtr<FermiAssembler> fermiAssembler;
+};
+
+
 using namespace Rcpp ;
 
 /** create an external pointer to a BWA object */
@@ -115,4 +129,3 @@ bool fastqReader_Open(const std::string& f) {
 void run_fermi(){
   FermiAssembler f;
 }
-
