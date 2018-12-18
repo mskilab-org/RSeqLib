@@ -2,22 +2,26 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 BWA__new <- function() {
-    .Call('RSeqLib_BWA__new', PACKAGE = 'RSeqLib')
+    .Call('_RSeqLib_BWA__new', PACKAGE = 'RSeqLib')
 }
 
 BWA__from_string <- function(xp, querySeq, seqname) {
-    invisible(.Call('RSeqLib_BWA__from_string', PACKAGE = 'RSeqLib', xp, querySeq, seqname))
+    invisible(.Call('_RSeqLib_BWA__from_string', PACKAGE = 'RSeqLib', xp, querySeq, seqname))
 }
 
 BWA__from_fasta <- function(xp, fasta) {
-    invisible(.Call('RSeqLib_BWA__from_fasta', PACKAGE = 'RSeqLib', xp, fasta))
+    invisible(.Call('_RSeqLib_BWA__from_fasta', PACKAGE = 'RSeqLib', xp, fasta))
 }
 
 BWA__query <- function(xp, qstring, qname, hardclip, keep_sec_with_frac_of_primary_score, max_secondary) {
-    .Call('RSeqLib_BWA__query', PACKAGE = 'RSeqLib', xp, qstring, qname, hardclip, keep_sec_with_frac_of_primary_score, max_secondary)
+    .Call('_RSeqLib_BWA__query', PACKAGE = 'RSeqLib', xp, qstring, qname, hardclip, keep_sec_with_frac_of_primary_score, max_secondary)
 }
 
 fastqReader_Open <- function(f) {
-    .Call('RSeqLib_fastqReader_Open', PACKAGE = 'RSeqLib', f)
+    .Call('_RSeqLib_fastqReader_Open', PACKAGE = 'RSeqLib', f)
+}
+
+run_fermi <- function() {
+    invisible(.Call('_RSeqLib_run_fermi', PACKAGE = 'RSeqLib'))
 }
 

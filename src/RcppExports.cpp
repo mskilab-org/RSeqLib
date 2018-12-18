@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // BWA__new
 RcppExport SEXP BWA__new();
-RcppExport SEXP RSeqLib_BWA__new() {
+RcppExport SEXP _RSeqLib_BWA__new() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -17,7 +17,7 @@ END_RCPP
 }
 // BWA__from_string
 void BWA__from_string(SEXP xp, std::string& querySeq, std::string& seqname);
-RcppExport SEXP RSeqLib_BWA__from_string(SEXP xpSEXP, SEXP querySeqSEXP, SEXP seqnameSEXP) {
+RcppExport SEXP _RSeqLib_BWA__from_string(SEXP xpSEXP, SEXP querySeqSEXP, SEXP seqnameSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
@@ -29,7 +29,7 @@ END_RCPP
 }
 // BWA__from_fasta
 void BWA__from_fasta(SEXP xp, std::string& fasta);
-RcppExport SEXP RSeqLib_BWA__from_fasta(SEXP xpSEXP, SEXP fastaSEXP) {
+RcppExport SEXP _RSeqLib_BWA__from_fasta(SEXP xpSEXP, SEXP fastaSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
@@ -40,7 +40,7 @@ END_RCPP
 }
 // BWA__query
 std::string BWA__query(SEXP xp, std::string& qstring, std::string& qname, bool hardclip, double keep_sec_with_frac_of_primary_score, int max_secondary);
-RcppExport SEXP RSeqLib_BWA__query(SEXP xpSEXP, SEXP qstringSEXP, SEXP qnameSEXP, SEXP hardclipSEXP, SEXP keep_sec_with_frac_of_primary_scoreSEXP, SEXP max_secondarySEXP) {
+RcppExport SEXP _RSeqLib_BWA__query(SEXP xpSEXP, SEXP qstringSEXP, SEXP qnameSEXP, SEXP hardclipSEXP, SEXP keep_sec_with_frac_of_primary_scoreSEXP, SEXP max_secondarySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -56,7 +56,7 @@ END_RCPP
 }
 // fastqReader_Open
 bool fastqReader_Open(const std::string& f);
-RcppExport SEXP RSeqLib_fastqReader_Open(SEXP fSEXP) {
+RcppExport SEXP _RSeqLib_fastqReader_Open(SEXP fSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -64,4 +64,28 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(fastqReader_Open(f));
     return rcpp_result_gen;
 END_RCPP
+}
+// run_fermi
+void run_fermi();
+RcppExport SEXP _RSeqLib_run_fermi() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    run_fermi();
+    return R_NilValue;
+END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_RSeqLib_BWA__new", (DL_FUNC) &_RSeqLib_BWA__new, 0},
+    {"_RSeqLib_BWA__from_string", (DL_FUNC) &_RSeqLib_BWA__from_string, 3},
+    {"_RSeqLib_BWA__from_fasta", (DL_FUNC) &_RSeqLib_BWA__from_fasta, 2},
+    {"_RSeqLib_BWA__query", (DL_FUNC) &_RSeqLib_BWA__query, 6},
+    {"_RSeqLib_fastqReader_Open", (DL_FUNC) &_RSeqLib_fastqReader_Open, 1},
+    {"_RSeqLib_run_fermi", (DL_FUNC) &_RSeqLib_run_fermi, 0},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_RSeqLib(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }
