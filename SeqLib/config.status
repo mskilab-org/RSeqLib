@@ -437,7 +437,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/gpfs/commons/home/mimielinski/git/mskilab/rSeqLib/SeqLib'
+ac_pwd='/gpfs/commons/groups/imielinski_lab/git/mskilab/rSeqLib/SeqLib'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/usr/bin/mkdir -p'
@@ -665,7 +665,7 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/usr/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]=""
-S["install_sh"]="${SHELL} /gpfs/commons/home/mimielinski/git/mskilab/rSeqLib/SeqLib/install-sh"
+S["install_sh"]="${SHELL} /gpfs/commons/groups/imielinski_lab/git/mskilab/rSeqLib/SeqLib/install-sh"
 S["MAKEINFO"]="makeinfo"
 S["AUTOHEADER"]="autoheader"
 S["AUTOMAKE"]="automake-1.15"

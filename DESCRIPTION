@@ -16,11 +16,11 @@ Depends:
     data.table,        
     parallel
 Imports:
-    Rcpp (>= 0.12),
+    Rcpp,
     reshape2,
     GenomicAlignments,
     data.table
-Remotes:        
+Remotes: 
   github::mskilab/gUtils,
 Suggests:
     BSgenome.Hsapiens.UCSC.hg19,
