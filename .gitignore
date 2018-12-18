@@ -5,3 +5,12 @@
 src/*.o
 src/*.so
 src/*.dll
+SeqLib/src/*.o
+SeqLib/src/*.so
+SeqLib/src/*.dll
+SeqLib/bwa/*.o
+SeqLib/bwa/*.so
+SeqLib/bwa/*.dll
+SeqLib/fermi-lite/*.o
+SeqLib/fermi-lite/*.so
+SeqLib/fermi-lite/*.dll
