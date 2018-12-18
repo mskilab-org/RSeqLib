@@ -55,7 +55,7 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
 })
 
 BWA_method <- function(name){
-     paste( "BWA", name, sep = "__" )
+     paste( "_RSeqLib_BWA", name, sep = "__" )
 
 }
 

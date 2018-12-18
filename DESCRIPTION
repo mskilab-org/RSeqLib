@@ -26,4 +26,4 @@ Suggests:
     rtracklayer
 BugReports: http://github.com/mskilab/RSeqLib/issues
 LinkingTo: Rcpp
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
