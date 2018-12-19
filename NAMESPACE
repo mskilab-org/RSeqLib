@@ -11,4 +11,3 @@ import(data.table)
 import(reshape2)
 importFrom(Rcpp,sourceCpp)
 useDynLib(RSeqLib)
-

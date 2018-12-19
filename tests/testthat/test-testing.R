@@ -14,7 +14,7 @@ test_that("BWA works", {
 })
 
 test_that("BWA_method works", {
-    expect_equal(BWA_method("object"), "BWA__object")    
+    expect_equal(BWA_method("object"), "_RSeqLib_BWA__object"
 })
 
 test_that("query works", {

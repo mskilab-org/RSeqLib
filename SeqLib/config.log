@@ -60,6 +60,60 @@ PATH: /nethome/mimielinski/Software/sshpass-1.05
 PATH: /gpfs/commons/home/mimielinski/Software/sratoolkit.2.5.7-centos_linux64/bin
 PATH: /gpfs/commons/home/mimielinski/Software/HMMCopy/HMMcopy/bin/
 PATH: /gpfs/commons/home/mimielinski/Software/UCSC/
+PATH: /gpfs/commons/home/mimielinski/software/expect/expect5.45.4/
+PATH: /gpfs/commons/groups/imielinski_lab/git/SeqLib/bin/
+PATH: /gpfs/commons/home/mimielinski/.gem/ruby/2.5.0/bin
+PATH: /gpfs/commons/home/mimielinski/lab/git/travis.rb/bin
+PATH: /gpfs/commons/home/mimielinski/lab/software/ruby/ruby-2.5.1/bin
+PATH: /gpfs/commons/home/mimielinski/lab/software/ruby/bin
+PATH: /gpfs/commons/home/mimielinski/lab/git/minimap2
+PATH: /gpfs/commons/home/mimielinski/lab/git/miniasm/
+PATH: /gpfs/commons/groups/imielinski_lab/Software/cancerit/alleleCount/bin
+PATH: /gpfs/commons/home/mimielinski/software/impute2/impute_v2.3.2_x86_64_static
+PATH: /gpfs/commons/home/mimielinski/software/anaconda3
+PATH: /gpfs/commons/groups/imielinski_lab/git/sga/src/bin/bin
+PATH: /gpfs/commons/groups/imielinski_lab/Software/SPAdes/SPAdes-3.11.1/bin/
+PATH: /gpfs/commons/home/mimielinski/.local/go/bin/
+PATH: /gpfs/commons/home/mimielinski/software/emacs-25.2/bin/
+PATH: /gpfs/commons/home/mimielinski/lab/Software/mosh/bin/
+PATH: /gpfs/commons/home/mimielinski/lab/Software/Juicer/
+PATH: /gpfs/commons/home/mimielinski/lab/.local/bin/
+PATH: /gpfs/commons/home/mimielinski/git/dapars/
+PATH: /gpfs/commons/home/mimielinski/lab/git/MACS/bin/
+PATH: /gpfs/commons/home/mimielinski/scripts/
+PATH: /gpfs/commons/home/mimielinski/modules/Snowman/
+PATH: /gpfs/commons/home/mimielinski/modules/STAR
+PATH: /nethome/mimielinski/Software/sshpass-1.05
+PATH: /gpfs/commons/home/mimielinski/Software/sratoolkit.2.5.7-centos_linux64/bin
+PATH: /gpfs/commons/home/mimielinski/Software/HMMCopy/HMMcopy/bin/
+PATH: /gpfs/commons/home/mimielinski/Software/UCSC/
+PATH: /gpfs/commons/home/mimielinski/software/expect/expect5.45.4/
+PATH: /gpfs/commons/groups/imielinski_lab/git/SeqLib/bin/
+PATH: /gpfs/commons/home/mimielinski/.gem/ruby/2.5.0/bin
+PATH: /gpfs/commons/home/mimielinski/lab/git/travis.rb/bin
+PATH: /gpfs/commons/home/mimielinski/lab/software/ruby/ruby-2.5.1/bin
+PATH: /gpfs/commons/home/mimielinski/lab/software/ruby/bin
+PATH: /gpfs/commons/home/mimielinski/lab/git/minimap2
+PATH: /gpfs/commons/home/mimielinski/lab/git/miniasm/
+PATH: /gpfs/commons/groups/imielinski_lab/Software/cancerit/alleleCount/bin
+PATH: /gpfs/commons/home/mimielinski/software/impute2/impute_v2.3.2_x86_64_static
+PATH: /gpfs/commons/home/mimielinski/software/anaconda3
+PATH: /gpfs/commons/groups/imielinski_lab/git/sga/src/bin/bin
+PATH: /gpfs/commons/groups/imielinski_lab/Software/SPAdes/SPAdes-3.11.1/bin/
+PATH: /gpfs/commons/home/mimielinski/.local/go/bin/
+PATH: /gpfs/commons/home/mimielinski/software/emacs-25.2/bin/
+PATH: /gpfs/commons/home/mimielinski/lab/Software/mosh/bin/
+PATH: /gpfs/commons/home/mimielinski/lab/Software/Juicer/
+PATH: /gpfs/commons/home/mimielinski/lab/.local/bin/
+PATH: /gpfs/commons/home/mimielinski/git/dapars/
+PATH: /gpfs/commons/home/mimielinski/lab/git/MACS/bin/
+PATH: /gpfs/commons/home/mimielinski/scripts/
+PATH: /gpfs/commons/home/mimielinski/modules/Snowman/
+PATH: /gpfs/commons/home/mimielinski/modules/STAR
+PATH: /nethome/mimielinski/Software/sshpass-1.05
+PATH: /gpfs/commons/home/mimielinski/Software/sratoolkit.2.5.7-centos_linux64/bin
+PATH: /gpfs/commons/home/mimielinski/Software/HMMCopy/HMMcopy/bin/
+PATH: /gpfs/commons/home/mimielinski/Software/UCSC/
 PATH: /opt/uge/bin/lx-amd64
 PATH: /gpfs/commons/home/mimielinski/software/expect/expect5.45.4/
 PATH: /gpfs/commons/groups/imielinski_lab/git/SeqLib/bin/
@@ -159,6 +213,16 @@ PATH: /gpfs/commons/home/mimielinski/Scripts/bash
 PATH: /gpfs/commons/home/mimielinski/lab/Software/CPLEX/CPLEX_Studio/cplex/bin/x86-64_linux/
 PATH: /gpfs/commons/home/mimielinski/git/mskilab/JaBbA
 PATH: /usr/lpp/mmfs/bin/
+PATH: /gpfs/commons/home/mimielinski/bin
+PATH: /gpfs/commons/home/mimielinski/dev/scripts/
+PATH: /gpfs/commons/home/mimielinski/Scripts/bash
+PATH: /gpfs/commons/home/mimielinski/lab/Software/CPLEX/CPLEX_Studio/cplex/bin/x86-64_linux/
+PATH: /gpfs/commons/home/mimielinski/git/mskilab/JaBbA
+PATH: /gpfs/commons/home/mimielinski/bin
+PATH: /gpfs/commons/home/mimielinski/dev/scripts/
+PATH: /gpfs/commons/home/mimielinski/Scripts/bash
+PATH: /gpfs/commons/home/mimielinski/lab/Software/CPLEX/CPLEX_Studio/cplex/bin/x86-64_linux/
+PATH: /gpfs/commons/home/mimielinski/git/mskilab/JaBbA
 PATH: /gpfs/commons/home/mimielinski/bin
 PATH: /gpfs/commons/home/mimielinski/dev/scripts/
 PATH: /gpfs/commons/home/mimielinski/Scripts/bash
@@ -403,7 +467,7 @@ configure:4704: checking for zlib.h
 configure:4704: result: yes
 configure:4712: checking for library containing gzopen
 configure:4743: g++ -o conftest -g -O2  -fPIC  conftest.cpp  >&5
-/tmp/ccfEYoWN.o: In function `main':
+/tmp/ccleud4h.o: In function `main':
 /gpfs/commons/groups/imielinski_lab/git/mskilab/rSeqLib/SeqLib/conftest.cpp:32: undefined reference to `gzopen'
 collect2: error: ld returned 1 exit status
 configure:4743: $? = 1
