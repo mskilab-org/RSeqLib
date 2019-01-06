@@ -13,9 +13,7 @@ R interface to SeqLib C++ package
 ## Installation
 
 ```R
-## install package via devtools::install_github().
-library(devtools)
-install_github('mskilab/RSeqLib')
+devtools::install_github('mskilab/RSeqLib')
 ```
 
 ## Examples 
