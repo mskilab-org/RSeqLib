@@ -219,7 +219,7 @@ RSeqLib Fermi object with 6365 reads and 43 contigs:
 ## retrieve the contigs and align back to the reference
 gr = bwa[contigs(fermi)]
 
-## this result is a granges aligned to the fasta corresponding to the bwa object
+## this result is a granges aligned to the fasta corresponding to the bwa object above
 gr[1]
 
 ```
@@ -238,7 +238,7 @@ GRanges object with 1 range and 12 metadata columns:
       <character> <integer> <integer> <integer>
   [1]           *       732         0       732
 
-``
+```
 
 Attributions
 ------------
