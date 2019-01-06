@@ -70,14 +70,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // BWA__from_string
-void BWA__from_string(SEXP xp, std::string& querySeq, std::string& seqname);
-RcppExport SEXP _RSeqLib_BWA__from_string(SEXP xpSEXP, SEXP querySeqSEXP, SEXP seqnameSEXP) {
+void BWA__from_string(SEXP xp, Rcpp::StringVector seq, Rcpp::StringVector seqname);
+RcppExport SEXP _RSeqLib_BWA__from_string(SEXP xpSEXP, SEXP seqSEXP, SEXP seqnameSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
-    Rcpp::traits::input_parameter< std::string& >::type querySeq(querySeqSEXP);
-    Rcpp::traits::input_parameter< std::string& >::type seqname(seqnameSEXP);
-    BWA__from_string(xp, querySeq, seqname);
+    Rcpp::traits::input_parameter< Rcpp::StringVector >::type seq(seqSEXP);
+    Rcpp::traits::input_parameter< Rcpp::StringVector >::type seqname(seqnameSEXP);
+    BWA__from_string(xp, seq, seqname);
     return R_NilValue;
 END_RCPP
 }

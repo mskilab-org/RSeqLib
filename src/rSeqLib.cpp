@@ -14,8 +14,21 @@ public:
   
   BWA() : bwa( new BWAWrapper) {}
   
-  void make_string_index( std::string& querySeq, std::string& seqname ) {
-    UnalignedSequenceVector usv = {{seqname, querySeq}};
+  void make_string_index(
+                         Rcpp::StringVector seq,
+                         Rcpp::StringVector seqname
+                         )
+  {
+    UnalignedSequenceVector usv;
+
+    for(int i=0; i < seqname.size(); i++)
+      {
+        UnalignedSequence contig;
+        contig.Seq =  Rcpp::as<std::string>(seq[i]);
+        contig.Name = Rcpp::as<std::string>(seqname[i]);
+        usv.push_back(contig);
+      }
+    
     Rcpp::XPtr<BWAWrapper> bwa( new BWAWrapper);    
     bwa->ConstructIndex(usv);    
     this->bwa = bwa;
@@ -139,9 +152,13 @@ RcppExport SEXP BWA__new(){
 
 /** make index from string*/
 // [[Rcpp::export]]
-void BWA__from_string( SEXP xp, std::string& querySeq, std::string& seqname) {
+void BWA__from_string( SEXP xp,
+                       Rcpp::StringVector seq,
+                       Rcpp::StringVector seqname
+                       )
+{
   Rcpp::XPtr<BWA> bwa(xp) ;
-  bwa->make_string_index(querySeq, seqname);
+  bwa->make_string_index(seq, seqname);
 }
 
 /** grab index from FASTA */

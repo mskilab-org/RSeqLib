@@ -22,11 +22,11 @@ Fermi__getContigs <- function(fermi) {
 }
 
 BWA__new <- function() {
-  .Call('_RSeqLib_BWA__new', PACKAGE = 'RSeqLib')
+    .Call('_RSeqLib_BWA__new', PACKAGE = 'RSeqLib')
 }
 
-BWA__from_string <- function(xp, querySeq, seqname) {
-    invisible(.Call('_RSeqLib_BWA__from_string', PACKAGE = 'RSeqLib', xp, querySeq, seqname))
+BWA__from_string <- function(xp, seq, seqname) {
+    invisible(.Call('_RSeqLib_BWA__from_string', PACKAGE = 'RSeqLib', xp, seq, seqname))
 }
 
 BWA__from_fasta <- function(xp, fasta) {

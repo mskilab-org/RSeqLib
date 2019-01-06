@@ -12,6 +12,15 @@ test_that("BWA", {
   expect_equal(gr$cigar, c('115M', '110M6D24M'))
   expect_equal(start(gr), c(0, 318))
   expect_equal(end(gr), c(114, 457))
+
+  bwa = BWA(seq = c(
+              allele1 = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG",
+              allele2 = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG"))
+
+  gr = bwa[c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG")]
+  expect_equal(gr$cigar, c('25M', '25M', '13S22M', '13S22M'))
+  expect_equal(start(gr), c(0, 0, 27, 27))
+  expect_equal(end(gr), c(24, 24, 48, 48))
 })
 
 

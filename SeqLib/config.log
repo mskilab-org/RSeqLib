@@ -403,7 +403,7 @@ configure:4704: checking for zlib.h
 configure:4704: result: yes
 configure:4712: checking for library containing gzopen
 configure:4743: g++ -o conftest -g -O2  -fPIC  conftest.cpp  >&5
-/tmp/ccazE8St.o: In function `main':
+/tmp/ccSlfRf6.o: In function `main':
 /gpfs/commons/groups/imielinski_lab/git/mskilab/rSeqLib/SeqLib/conftest.cpp:32: undefined reference to `gzopen'
 collect2: error: ld returned 1 exit status
 configure:4743: $? = 1

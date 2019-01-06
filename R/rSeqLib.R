@@ -185,7 +185,9 @@ setMethod('reads', 'Fermi', function(.Object)
 #' @export
 #' @author Marcin Imielinski
 setClass( "BWA", representation( bwa = "externalptr",
-                                params = "list"
+                                params = "list",
+                                reference = "character",
+                                seqnames = "character"
                                 ), contains = "externalptr" )
 
 #' @name show
@@ -209,22 +211,35 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
                                         max_secondary = 10
                                         )
 {
-    .Object@bwa = BWA__new()
-    .Object@params = list(
+  .Object@bwa = BWA__new()
+  .Object@seqnames = character()
+  .Object@params = list(
         mc.cores = mc.cores,
         hardclip = hardclip,
         keep_sec_with_frac_of_primary_score = keep_sec_with_frac_of_primary_score,
         max_secondary = max_secondary)
-    if (!is.null(fasta)) {
-        BWA__from_fasta(.Object@bwa, fasta)
-    }
-    else if (!is.null(seq)) {
-        BWA__from_string(.Object@bwa, seq, seqname)
-    }
-    else {
-        stop('Either fasta or sequence must be provided')
-    }
-    return(.Object)
+  if (!is.null(fasta)) {
+    .Object@reference = fasta
+    BWA__from_fasta(.Object@bwa, fasta)
+  }
+  else if (!is.null(seq)) {
+    if (!is.null(names(seq)))
+      seqname = names(seq)
+    
+      if (length(seq) != length(seqname))
+        seqname = data.frame(seq, seqname)[,2]
+
+      if (any(duplicated(seqname)))
+        seqname = dedup(seqname)
+
+    .Object@reference = seq
+    .Object@seqnames = seqname
+    BWA__from_string(.Object@bwa, seq, seqname)
+  }
+  else {
+    stop('Either fasta or sequence must be provided')
+  }
+  return(.Object)
 })
 
 #' @name BWA
@@ -310,8 +325,11 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
     if (sum(nchar(tmp))==0) {
         return(GRanges())
     }
-    
-    tmp = .parse_bam(tmp)
+
+    seqnames = NULL
+    if (length(.Object@seqnames)>0)
+      seqnames = .Object@seqnames
+    tmp = .parse_bam(tmp, seqnames)
     return(tmp)
 })
 
@@ -322,7 +340,7 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
 #' @export
 setMethod("[", "BWA", function(x, i) query(x, i))                                      
 
-.parse_bam = function(lines, tags = NULL)
+.parse_bam = function(lines, seqnames = NULL, tags = NULL)
 {
     fields = c('qname', 'flag', 'rname', 'pos', 'mapq', 'cigar', 'rnext', 'pnext', 'tlen', 'seq', 'qual')
 #    lines = gsub('\n', '', lines)   
@@ -343,7 +361,7 @@ setMethod("[", "BWA", function(x, i) query(x, i))
     setnames(out, 1:11, fields)
     out = out[, c(fields, tags), with = FALSE]
 
-    cigs <- countCigar(out$cigar)
+    cigs = countCigar(out$cigar)
 
     out$pos = as.numeric(out$pos)
     
@@ -365,9 +383,15 @@ setMethod("[", "BWA", function(x, i) query(x, i))
     
     newdt <- data.table(pos = out$pos, pos2 = out$pos2, strand = out$strand, rname = out$rname)   # create data.table of start, end, strand, seqnames
     
-    rr <- IRanges(newdt$pos, newdt$pos2)
-    sf <- factor(newdt$strand, levels=c('+', '-', '*'))
-    ff <- factor(newdt$rname, levels=unique(newdt$rname))
+    rr = IRanges(newdt$pos, newdt$pos2)
+    sf = factor(newdt$strand, levels=c('+', '-', '*'))
+    if (is.null(seqnames))
+    {
+      ff = newdt$rname
+    }
+    else {
+      ff = seqnames[as.integer(as.character(newdt$rname))]
+    }
     gr.fields <- c("rname", "strand", "pos", "pos2")
     grobj <- GRanges(seqnames=ff, ranges=rr, strand=sf)
     
@@ -451,6 +475,19 @@ countCigar <- function(cigar) {
     return(out)
 }
 
+#' @name genome
+#' @title genome
+#' @description
+#'
+#' Retrieves genome definition from BWA object
+#' @export 
+setGeneric('genome', function(.Object) standardGeneric('genome'))
+setMethod('genome', 'BWA', function(.Object)
+{
+  .Object@reference
+})
+
+
 
 bamflag = function(reads)
 {
@@ -467,3 +504,14 @@ bamflag = function(reads)
     return(out)
 }
 
+
+dedup = function(x, suffix = '.')
+{
+  dup = duplicated(x);
+  udup = setdiff(unique(x[dup]), NA)
+  udup.ix = lapply(udup, function(y) which(x==y))
+  udup.suffices = lapply(udup.ix, function(y) c('', paste(suffix, 2:length(y), sep = '')))
+  out = x;
+  out[unlist(udup.ix)] = paste(out[unlist(udup.ix)], unlist(udup.suffices), sep = '');
+  return(out)
+}

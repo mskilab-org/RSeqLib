@@ -31,24 +31,16 @@ install_github('mskilab/RSeqLib')
 
 ## Examples 
 
-```R
-## via functions available in package.
-library(RSeqLib)
-ls.str('package:RSeqLib')
-```
-
-
-    BWA : function (fasta = NULL, seq = NULL, seqname = "myseq", mc.cores = 1, hardclip = FALSE, 
-        keep_sec_with_frac_of_primary_score = 0.9, max_secondary = 10)  
-    initialize : Formal class 'nonstandardGenericFunction' [package "methods"] with 8 slots
-    query : Formal class 'standardGeneric' [package "methods"] with 8 slots
+### BWA on character vector reference
 
 ```R
-## create a bwa object by using the BWA() function and supply a random reference fasta to it. 
-bwa <- BWA(seq = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG")
-## align two sequences with the reference fasta. 
-## notice the result is in a GRanges format and there is a cigar field. 
-query(bwa, c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG"))
+
+## instantiate the BWA object around a character vector custom reference sequence 
+bwa = BWA(seq = c("CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG"))
+
+## align two sequences to this reference using "[" operator
+## returned result is a granges on the above sequence
+bwa[c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG")]
 ```
 
 ```
@@ -74,49 +66,184 @@ GRanges object with 2 ranges and 12 metadata columns:
 ```
 
 ```R
-## now, the best part! let's query to hg19 (replace the path with your own)
-bwa <- BWA(fasta = "human_g1k_v37_decoy.fasta") # takes a few minutes.
-query(bwa, c("TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT"))
+
+## you can make a reference genome with a multiple named contigs
+## in this case we make them identical 
+bwa = BWA(seq = c(
+allele1 = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG",
+allele2 = "CACTAGCTAGCTACGCGGGGGCGCGCGCGCGCGAAAAACACTTTCACAG"))
+
+## notice that now the seqnames of alignments are "allele1" and "allele2"
+## and we get multiple alignments per query, each with mapq0, as expected
+bwa[c("CACTAGCTAGCTACGCGGGGGCGCG", "CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG")]
 ```
 
 ```
-7                                                                                                        
-GRanges object with 7 ranges and 12 metadata columns:      
-    seqnames                 ranges strand |       qname        flag                                                              <Rle>              <IRanges>  <Rle> | <character> <character>                                                         
-[1]        1 [    12060,     12119]      + |     myquery           0                                                         
-[2]       23 [155257601, 155257660]      - |     myquery         272                                                         
-[3]       15 [102519049, 102519108]      - |     myquery         272                                                         
-[4]       16 [    61741,     61800]      + |     myquery         256                                                         
-[5]        9 [    12173,     12232]      + |     myquery         256                                                         
-[6]        2 [114358895, 114358954]      - |     myquery         272                                                         
-[7]       12 [    93488,     93547]      - |     myquery         272                                                         
-    mapq       cigar       rnext       pnext        tlen                                                                 
-    <character> <character> <character> <character> <character>                                                             
-[1]           0         60M           0          -1           0                                                             
-[2]           0         60M           0          -1           0                                                             
-[3]           0         60M           0          -1           0                                                             
-[4]           0         60M           0          -1           0                                                             
-[5]           0         60M           0          -1           0                                                             
-[6]           0         60M           0          -1           0                                                             
-[7]           0         60M           0          -1           0                                                             
-    seq        qual                                                                                                      
-    <character> <character>                                                 
-[1] TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT           *                                                 
-[2] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
-[3] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
-[4] TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT           *                                                 
-[5] TGGAGTGGAGTTTTCCTGTGGAGAGGAGCCATGCCTAGAGTGGGATGGGCCATTGTTCAT           *                                                 
-[6] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
-[7] ATGAACAATGGCCCATCCCACTCTAGGCATGGCTCCTCTCCACAGGAAAACTCCACTCCA           *                                                 
-    AS        DD    qwidth                                                                                               
-    <integer> <integer> <integer>                                                                                           
-[1]        60         0        60                                                                                           
-[2]        60         0        60                                                                                           
-[3]        60         0        60                                                                                           
-[4]        60         0        60                                                                                           
-[5]        60         0        60                                                                                           
-[6]        60         0        60                                                                                           
-[7]        55         0        60                                                                                           
--------                                                                                                                     
-seqinfo: 7 sequences from an unspecified genome; no seqlengths         
+GRanges object with 4 ranges and 12 metadata columns:
+      seqnames    ranges strand |       qname        flag        mapq
+         <Rle> <IRanges>  <Rle> | <character> <character> <character>
+  [1]  allele1      0-24      + |     myquery           0           0
+  [2]  allele2      0-24      + |     myquery         256           0
+  [3]  allele2     27-48      + |     myquery           0           0
+  [4]  allele1     27-48      + |     myquery         256           0
+            cigar       rnext       pnext        tlen
+      <character> <character> <character> <character>
+  [1]         25M           0          -1           0
+  [2]         25M           0          -1           0
+  [3]      13S22M           0          -1           0
+  [4]      13S22M           0          -1           0
+                                      seq        qual        AS        DD
+                              <character> <character> <integer> <integer>
+  [1]           CACTAGCTAGCTACGCGGGGGCGCG           *        25         0
+  [2]           CACTAGCTAGCTACGCGGGGGCGCG           *        25         0
+  [3] CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG           *        22         0
+  [4] CACTAGCTAGCTACGCGCGAAAAACACTTTCACAG           *        22         0
+         qwidth
+      <integer>
+  [1]        25
+  [2]        25
+  [3]        35
+  [4]        35
+  -------
+  seqinfo: 2 sequences from an unspecified genome; no seqlengths
 ```
+
+### BWA on pre-existing fasta index 
+
+```R
+## we can also use a pre existing fasta index
+## this mini-genome was built using a chunk of hg19 chromosome 2
+bwa = BWA(system.file('ext/mini.genome.fasta', package = 'RSeqLib'))
+
+## inspect the bwa object
+bwa
+
+```
+```
+RSeqLib BWA object with params mc.cores = 1, hardclip = 0, keep_sec_with_frac_of_primary_score = 0.9, max_secondary = 10
+```
+
+```R
+## can retrieve the fasta path or character vector
+## corresponding of the reference of the  bwa object using genome(bwa)
+genome(bwa)
+```
+
+```
+[1] "/gpfs/commons/groups/imielinski_lab/git/mskilab/rSeqLib/inst/ext/mini.genome.fasta"
+
+```
+
+``` R
+
+## now let's query a character vector against this fasta reference
+qstring = c("TGCTCTGGCACAAAGATAGGCATGCTCAGCCCACCTCTGCCAGCACTGGGGCTGAAGACTGGCCCACGTGTCCTCTCAATCCCCAGGACAACTTCACTATGGCTTTCATTAATAA",
+             "GCACAGATATCAACATAAGGACACAGAAAGCAGGAAAAGCAAGGAAATATGACTCCTTCAAAGGAACACAATAATTTTTCAGCATTAGATCTTAATCAGAAAGAACTTACTCCCAGATAAATAATTCAAAATAA")
+
+## again we use the "[" operator to retrieve results
+bwa[qstring]
+```
+
+```
+GRanges object with 2 ranges and 12 metadata columns:
+      seqnames        ranges strand |       qname        flag        mapq
+         <Rle>     <IRanges>  <Rle> | <character> <character> <character>
+  [1]        1 108294-108408      - |     myquery          16          60
+  [2]        1 107951-108090      - |     myquery          16          60
+            cigar       rnext       pnext        tlen
+      <character> <character> <character> <character>
+  [1]        115M           0          -1           0
+  [2]   24M6D110M           0          -1           0
+                                                                                                                                         seq
+                                                                                                                                 <character>
+  [1]                    TTATTAATGAAAGCCATAGTGAAGTTGTCCTGGGGATTGAGAGGACACGTGGGCCAGTCTTCAGCCCCAGTGCTGGCAGAGGTGGGCTGAGCATGCCTATCTTTGTGCCAGAGCA
+  [2] TTATTTTGAATTATTTATCTGGGAGTAAGTTCTTTCTGATTAAGATCTAATGCTGAAAAATTATTGTGTTCCTTTGAAGGAGTCATATTTCCTTGCTTTTCCTGCTTTCTGTGTCCTTATGTTGATATCTGTGC
+             qual        AS        DD    qwidth
+      <character> <integer> <integer> <integer>
+  [1]           *       115         0       115
+  [2]           *       122         0       134
+  -------
+  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+```
+
+
+### Fermi on character vectors
+
+```R
+
+## character vector of "reads"
+reads =
+c('CTGCTAAGGAGATGGTGTGGCATCTGTGGAAGTCTGCTTGCACACAGCTGGAAGCCTTCAGGGGAAATAACAAACTGCTTCTCTTGCTGGGATTCCGACAT',
+'CTAAGGAGATGGTGTGGCATCTGTGGAAGTCTGCTTGCACACAGCTGGAAGCCTTCAGGGGAAATAACAAACTGCTTCTCTTGCTGGGATTCCGACATGTC',
+'TAAGGAGATGGTGTGGCATCTGTGGAAGTCTGCTTGCACACAGCTGGAAGCCTTCAGGGGAAATAACAAACTGCTTCTCTTGCTGGGATTCCGACATGTCC',
+'GATGGTGTGGCATCTGTGGAAGTCTGCTTGCACACAGCTGGAAGCCTTCAGGGGAAATAACAAACTGCTTCTCTTGCTGGGATTCCGACATGTCCAAATAT',
+'GGTGTGGCATCTGTGGAAGTCTGCTTGCACACAGCTGGAAGCCTTCAGGGGAAATAACAAACTGCTTCTCTTGCTGGGATTCCGACATGTCCAAATATGTC')
+fermi = Fermi(reads, assemble = TRUE)
+contigs(fermi)
+```
+```
+[1] "GACATATTTGGACATGTCGGAATCCCAGCAAGAGAAGCAGTTTGTTATTTCCCCTGAAGGCTTCCAGCTGTGTGCAAGCAGACTTCCACAGATGCCACACCATCTCCTTAGCAG"
+```
+
+### Fermi on objects coercible to data.tables
+
+## can also assemble a GRanges of reads (or any object
+## coercible to a data.frame, or data.table)
+## input just needs $seq, (optional) $qual, and (optional) $qname fields 
+## (so fermi takes base qualities into account)
+reads = readRDS(system.file('ext/reads.rds', package = 'RSeqLib'))
+
+names(as.data.table(reads))
+```
+```
+ [1] "seqnames" "start"    "end"      "width"    "strand"   "qname"
+ [7] "flag"     "qwidth"   "mapq"     "cigar"    "mrnm"     "mpos"
+[13] "isize"    "seq"      "qual"     "MD"       "MQ" 
+```
+
+```R
+## make fermi object and assemble with error correction
+fermi = Fermi(reads, assemble = TRUE)
+fermi
+```
+
+```
+RSeqLib Fermi object with 6365 reads and 43 contigs:
+
+```
+
+```R
+
+## retrieve the contigs and align back to the reference
+gr = bwa[contigs(fermi)]
+
+## this result is a granges aligned to the fasta corresponding to the bwa object
+gr[1]
+
+```
+```
+GRanges object with 1 range and 12 metadata columns:
+      seqnames        ranges strand |       qname        flag        mapq
+         <Rle>     <IRanges>  <Rle> | <character> <character> <character>
+  [1]        1 107677-108408      - |     myquery          16          60
+            cigar       rnext       pnext        tlen
+      <character> <character> <character> <character>
+  [1]        732M           0          -1           0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               seq
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <character>
+  [1] TTTTTTTTTTAATTGTCTGATTGGAGTATTTAAAAAGATCTGTCTTCAAGTTCTGAGATTCTTTATTCTACCTGATCTAATCTATTGTTGATGCTTTCAAATGTGTTTTTTTTATTTCCTTCAATGAATTCTTCAGTTCCAGAATTTCTATTTGGTTCATTTAAAAATGTCTATTTCTGTGTAAATTTCTCATTTATATTCTGAATTGATTTTCTAATTTCTTTCTATTGTTTTTCAGAATTTTCTTGTATTTTACTGAGTTTCTTTAAAATCATTATTTTGAATTATTTATCTGGGATGTTATGTAAGTTCTTTCTGATTAAGATCTAATGCTGAAAAATTATTGTGTTCCTTTGAAGGAGTCATATTTCCTTGCTTTTCCTGCTTTCTGTGTCCTTATGTTGATATCTGTGCATCTGGCATAATAGTCACCTTCTATTTTTGAATTTGCTTTTATAGGGGAGGACTTTTTCCTGAAGATGTATCTCTGGTATCAGTTGGGTAGAGCACTTTGGCTTTGATTCTGGGTGCATCCAGTAGTGTAGTCTCCATATGATTTCTTTGGCTGTAAACAGTGTTAGTAGCATCTGTGATTTCCTTCATGGATTAGAGTGTGGTTATTAATGAAAGCCATAGTGAAGTTGTCCTGGGGATTGAGAGGACACGTGGGCCAGTCTTCAGCCCCAGTGCTGGCAGAGGTGGGCTGAGCATGCCTATCTTTGTGCCAGAGCA
+             qual        AS        DD    qwidth
+      <character> <integer> <integer> <integer>
+  [1]           *       732         0       732
+
+``
+
+Attributions
+------------
+> Marcin Imielinski - Assistant Professor, Weill Cornell Medicine
+> Core Member, New York Genome Center.
+
+> Jeremiah Wala - MD PhD Student, Harvard / MIT / HMS
+
+> Khagay Nagdimov - Intern, Imielinski Lab, New York Genome Center
