@@ -1,4 +1,4 @@
 library(testthat)
 library(RSeqLib)
 
-test_check('RSeqlib')
+test_check('RSeqLib')
