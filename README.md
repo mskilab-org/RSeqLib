@@ -188,6 +188,7 @@ contigs(fermi)
 
 ### Fermi on objects coercible to data.tables
 
+```R
 ## can also assemble a GRanges of reads (or any object
 ## coercible to a data.frame, or data.table)
 ## input just needs $seq, (optional) $qual, and (optional) $qname fields 
