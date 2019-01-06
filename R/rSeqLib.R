@@ -4,6 +4,179 @@
 NULL
 
 
+#' @name Fermi-claas
+#' @title Fermi-claas
+#' @description
+#' Fermi class
+#' @export
+#' @author Marcin Imielinski
+setClass("Fermi", representation( fermi = "externalptr",
+                                  reads = "data.table",
+                                  contigs = "character",
+                                  assembled = "logical",
+                                  params = "list"
+                                  ), contains = "externalptr" )
+
+#' @name show
+#' @title show
+#' @description show
+#' @author Marcin Imielinski
+setMethod('show', 'Fermi', function(object)
+{
+  message(sprintf('RSeqLib Fermi object with %s reads and %s contigs:',
+                  nrow(object@reads), length(object@contigs)))
+})
+
+
+#' @name fermi_initialize
+#' @title fermi_initialize
+#' @description initialize fermi
+#' @param reads character vector of [ACGT] OR data.table with columns $seq and optional fields $qual, $qname
+#' @param qual optional character vector of ASCII quality strings, nchar(qual) and nchar(reads) must be identical (default "~")
+#' @param qname character vector of qname (default reads are numbered 1:length(reads))
+#' @param assemble logical flag of whether to immediately assemble
+#' @param correct logical flag of whether to error correct if we immediately assemble
+#' @export 
+setMethod('initialize', 'Fermi', function(.Object, reads = NULL, qual = NULL, qname = NULL, assemble = FALSE, correct = TRUE)
+{
+  .Object@fermi = Fermi__new()
+  .Object@reads = data.table()
+  .Object@contigs = character()
+  .Object@assembled = FALSE
+  .Object@params = list()
+
+  if (!is.null(reads))
+    .Object = addReads(.Object, reads, qual, qname)
+
+  if (assemble)
+    .Object = assemble(.Object, correct)
+
+  return(.Object)
+})
+
+#' @name Fermi
+#' @title  Fermi
+#' @description initialize Fermi
+#' @export
+Fermi = function(reads = NULL, qual = NULL, qname = NULL, assemble = FALSE, correct = TRUE)
+{
+  new('Fermi', reads = reads,
+      qual = qual,
+      qname = qname,
+      assemble = assemble,
+      correct = correct)
+}
+
+
+#' @name addReads
+#' @title addReads
+#' @description
+#'
+#' Adds reads to Fermi object, clearing contigs field.
+#' 
+#' @param reads character vector of [ACGT]* OR data.table with columns $seq and optional fields $qual, $qname
+#' @param qual optional character vector of ASCII quality strings, nchar(qual) and nchar(reads) must be identical (default "~")
+#' @param qname character vector of qname (default reads are numbered 1:length(reads))
+#' @export 
+setGeneric('addReads', function(.Object, reads, qual, qname) standardGeneric('addReads'))
+setMethod('addReads', 'Fermi', function(.Object, reads = NULL, qual = NULL, qname = NULL)
+{
+    if (!is.null(reads)) {
+    if (inherits(reads, 'character'))
+      {
+        reads = data.table(seq = reads)
+
+        if (!is.null(qname))
+          reads$qname = qname
+
+        if (!is.null(qual))
+          reads$qual = qual
+      }
+    else 
+      {
+        if (!is.data.table(data.frame(reads)))
+          reads = as.data.table(reads)
+        else
+          reads = copy(readS)
+        
+        if(is.null(reads$seq))
+          stop('if reads is a data.table it must have $seq field at the least')
+      }
+    
+    if (is.null(reads$qname) & !is.null(names(reads$seq)))
+      reads$qname = names(reads$seq)
+    
+    if (is.null(reads$qname))
+      reads$qname = as.character(1:nrow(reads))
+    
+    if (is.null(reads$qual))
+      reads$qual = gsub('.', '~', reads$seq)
+    
+    else if (!all(nchar(reads$qual) == nchar(reads$seq)))
+      stop('Quality score strings must match reads in length')
+
+    if (nrow(.Object@reads)>0)
+      .Object@reads = rbind(.Object@reads, reads[, .(qname, seq, qual)])
+    else
+      .Object@reads = reads[, .(qname, seq, qual)]
+
+    Fermi__addReads(.Object@fermi, reads$qname, reads$seq, reads$qual)
+
+    ## reset contigs
+    .Object@contigs = character()
+    }
+    return(.Object)
+})
+
+
+#' @name assemble
+#' @title assemble
+#' @description
+#'
+#' Assembles reads in fermi object and creates contig object
+#' @export
+#'
+setGeneric('assemble', function(.Object, ...) standardGeneric('assemble'))
+setMethod('assemble', 'Fermi', function(.Object, correct = TRUE)
+{
+  if (correct)
+    Fermi__correctReads(.Object@fermi)
+
+  if (!.Object@assembled)
+    Fermi__performAssembly(.Object@fermi)
+
+  .Object@contigs = Fermi__getContigs(.Object@fermi)
+  
+  .Object@assembled = TRUE
+  return(.Object)
+})
+
+
+#' @name contigs
+#' @title contigs
+#' @description
+#'
+#' Retrieves contigs from fermi object
+#' @export
+setGeneric('contigs', function(.Object) standardGeneric('contigs'))
+setMethod('contigs', 'Fermi', function(.Object)
+{
+  if (!(.Object@assembled))
+    warning('assembly has not yet been run')      
+  .Object@contigs
+})
+
+#' @name reads
+#' @title reads
+#' @description
+#'
+#' Retrieves contigs from fermi object
+#' @export 
+setGeneric('reads', function(.Object) standardGeneric('reads'))
+setMethod('reads', 'Fermi', function(.Object)
+{
+  .Object@reads
+})
 
 #' @name BWA-claas
 #' @title BWA-claas
@@ -36,7 +209,7 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
                                         max_secondary = 10
                                         )
 {
-    .Object@bwa =.Call(BWA_method( "new" ))
+    .Object@bwa = BWA__new()
     .Object@params = list(
         mc.cores = mc.cores,
         hardclip = hardclip,
@@ -53,11 +226,6 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
     }
     return(.Object)
 })
-
-BWA_method <- function(name){
-     paste( "_RSeqLib_BWA", name, sep = "__" )
-
-}
 
 #' @name BWA
 #' @title  BWA
@@ -113,6 +281,13 @@ setMethod('$<-', 'BWA', function(x, name, value)
 #' @name query
 #' @title query
 #' @description  query
+#'
+#' Query character vector of DNA reads using BWA.
+#' @param qstring character vector of DNA reads, with optional names specifying qnames
+#' @param qname optional vector of read names to provide with query
+#' @param hardclip logical flag whether to hardclip alignments (default FALSE)
+#' @param keep_sec_with_frac_of_primary_score BWA threshold for keeping secondary alignments
+#' @param max_secondary integer max number of alignments to keep
 #' @export
 setGeneric('query', function(.Object,...) standardGeneric('query'))
 setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
@@ -225,16 +400,16 @@ munlist = function(x, force.rbind = F, force.cbind = F, force.list = F)
                    iix = unlist(lapply(1:length(x), function(y) if (length(x[[y]])>0) 1:length(x[[y]]) else NULL)),
                    unlist(x)))
     }
-    else if (force.rbind) {
-      return(cbind(ix = unlist(lapply(1:length(x), function(y) rep(y, nrow(x[[y]])))),
-                   iix = unlist(lapply(1:length(x), function(y) if (nrow(x[[y]])>0) 1:nrow(x[[y]]) else NULL)),
-                   do.call('rbind', x)))
-    }
-    else if (force.cbind) {
-      return(t(rbind(ix = unlist(lapply(1:length(x), function(y) rep(y, ncol(x[[y]])))),
-                     iix = unlist(lapply(1:length(x), function(y) if (ncol(x[[y]])>0) 1:ncol(x[[y]]) else NULL)),
-                     do.call('cbind', x))))
-    }
+    ## else if (force.rbind) {
+    ##   return(cbind(ix = unlist(lapply(1:length(x), function(y) rep(y, nrow(x[[y]])))),
+    ##                iix = unlist(lapply(1:length(x), function(y) if (nrow(x[[y]])>0) 1:nrow(x[[y]]) else NULL)),
+    ##                do.call('rbind', x)))
+    ## }
+    ## else if (force.cbind) {
+    ##   return(t(rbind(ix = unlist(lapply(1:length(x), function(y) rep(y, ncol(x[[y]])))),
+    ##                  iix = unlist(lapply(1:length(x), function(y) if (ncol(x[[y]])>0) 1:ncol(x[[y]]) else NULL)),
+    ##                  do.call('cbind', x))))
+    ## }
   }
 
 

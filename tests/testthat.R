@@ -1,4 +1,4 @@
 library(testthat)
-library(RSeqLib)
+library(gGnome)
 
-test_check("RSeqLib")
+test_check('gGnome')

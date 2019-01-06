@@ -5,6 +5,60 @@
 
 using namespace Rcpp;
 
+// Fermi__new
+RcppExport SEXP Fermi__new();
+RcppExport SEXP _RSeqLib_Fermi__new() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(Fermi__new());
+    return rcpp_result_gen;
+END_RCPP
+}
+// Fermi__addReads
+void Fermi__addReads(SEXP fermi, Rcpp::StringVector qnames, Rcpp::StringVector seqs, Rcpp::StringVector quals);
+RcppExport SEXP _RSeqLib_Fermi__addReads(SEXP fermiSEXP, SEXP qnamesSEXP, SEXP seqsSEXP, SEXP qualsSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type fermi(fermiSEXP);
+    Rcpp::traits::input_parameter< Rcpp::StringVector >::type qnames(qnamesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::StringVector >::type seqs(seqsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::StringVector >::type quals(qualsSEXP);
+    Fermi__addReads(fermi, qnames, seqs, quals);
+    return R_NilValue;
+END_RCPP
+}
+// Fermi__correctReads
+void Fermi__correctReads(SEXP fermi);
+RcppExport SEXP _RSeqLib_Fermi__correctReads(SEXP fermiSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type fermi(fermiSEXP);
+    Fermi__correctReads(fermi);
+    return R_NilValue;
+END_RCPP
+}
+// Fermi__performAssembly
+void Fermi__performAssembly(SEXP fermi);
+RcppExport SEXP _RSeqLib_Fermi__performAssembly(SEXP fermiSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type fermi(fermiSEXP);
+    Fermi__performAssembly(fermi);
+    return R_NilValue;
+END_RCPP
+}
+// Fermi__getContigs
+std::vector< std::string > Fermi__getContigs(SEXP fermi);
+RcppExport SEXP _RSeqLib_Fermi__getContigs(SEXP fermiSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type fermi(fermiSEXP);
+    rcpp_result_gen = Rcpp::wrap(Fermi__getContigs(fermi));
+    return rcpp_result_gen;
+END_RCPP
+}
 // BWA__new
 RcppExport SEXP BWA__new();
 RcppExport SEXP _RSeqLib_BWA__new() {
@@ -65,23 +119,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// run_fermi
-void run_fermi();
-RcppExport SEXP _RSeqLib_run_fermi() {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    run_fermi();
-    return R_NilValue;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RSeqLib_Fermi__new", (DL_FUNC) &_RSeqLib_Fermi__new, 0},
+    {"_RSeqLib_Fermi__addReads", (DL_FUNC) &_RSeqLib_Fermi__addReads, 4},
+    {"_RSeqLib_Fermi__correctReads", (DL_FUNC) &_RSeqLib_Fermi__correctReads, 1},
+    {"_RSeqLib_Fermi__performAssembly", (DL_FUNC) &_RSeqLib_Fermi__performAssembly, 1},
+    {"_RSeqLib_Fermi__getContigs", (DL_FUNC) &_RSeqLib_Fermi__getContigs, 1},
     {"_RSeqLib_BWA__new", (DL_FUNC) &_RSeqLib_BWA__new, 0},
     {"_RSeqLib_BWA__from_string", (DL_FUNC) &_RSeqLib_BWA__from_string, 3},
     {"_RSeqLib_BWA__from_fasta", (DL_FUNC) &_RSeqLib_BWA__from_fasta, 2},
     {"_RSeqLib_BWA__query", (DL_FUNC) &_RSeqLib_BWA__query, 6},
     {"_RSeqLib_fastqReader_Open", (DL_FUNC) &_RSeqLib_fastqReader_Open, 1},
-    {"_RSeqLib_run_fermi", (DL_FUNC) &_RSeqLib_run_fermi, 0},
     {NULL, NULL, 0}
 };
 

@@ -45,7 +45,7 @@ public:
     for (auto& i : results)
       stream << i << std::endl;
 
-    std::cout << results.size() << std::endl;
+    //    std::cout << results.size() << std::endl;
     
     std::string str =  stream.str();  
     return(str);
@@ -73,6 +73,63 @@ private:
 
 
 using namespace Rcpp ;
+
+
+/** create an external pointer to a BWA object */
+// [[Rcpp::export]]
+RcppExport SEXP Fermi__new(){
+  return Rcpp::XPtr<FermiAssembler>( new FermiAssembler, true ) ;
+}
+
+/** add reads to fermi assembler*/
+// [[Rcpp::export]]
+void Fermi__addReads(SEXP fermi,
+                     Rcpp::StringVector qnames,
+                     Rcpp::StringVector seqs,
+                     Rcpp::StringVector quals
+                     )
+{
+  Rcpp::XPtr<FermiAssembler> fermixp(fermi) ;
+
+  UnalignedSequenceVector usv;
+
+  for(int i=0; i < qnames.size(); i++)
+    {
+      UnalignedSequence read;
+      read.Seq =  Rcpp::as<std::string>(seqs[i]);
+      read.Name = Rcpp::as<std::string>(qnames[i]);
+      read.Qual = Rcpp::as<std::string>(quals[i]);
+      usv.push_back(read);
+    }
+
+  fermixp->AddReads(usv);
+}
+
+
+/** error correct reads*/
+// [[Rcpp::export]]
+void Fermi__correctReads(SEXP fermi)
+{
+  Rcpp::XPtr<FermiAssembler> fermixp(fermi) ;
+  fermixp->CorrectReads();
+}
+
+/** perform Assembly*/
+// [[Rcpp::export]]
+void Fermi__performAssembly(SEXP fermi)
+{
+  Rcpp::XPtr<FermiAssembler> fermixp(fermi) ;
+  fermixp->PerformAssembly();
+}
+
+/** get Contigs*/
+// [[Rcpp::export]]
+std::vector< std::string > Fermi__getContigs(SEXP fermi)
+{
+  const Rcpp::XPtr<FermiAssembler> fermixp(fermi) ;
+  std::vector<std::string> contigs = fermixp->GetContigs();
+  return(contigs);
+}
 
 /** create an external pointer to a BWA object */
 // [[Rcpp::export]]
@@ -122,9 +179,4 @@ bool fastqReader_Open(const std::string& f) {
 
   return(available);
   //bool available FastqReader::Open(f);
-}
-
-// [[Rcpp::export]]
-void run_fermi(){
-  FermiAssembler f;
 }
