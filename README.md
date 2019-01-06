@@ -16,18 +16,7 @@ R interface to SeqLib C++ package
 ## install package via devtools::install_github().
 library(devtools)
 install_github('mskilab/RSeqLib')
-
 ```
-
-    Installing RSeqLib
-    '/nfs/sw/R/R-3.3.0/lib64/R/bin/R' --no-site-file --no-environ --no-save  \
-      --no-restore --quiet CMD INSTALL '/tmp/RtmpNtm7wg/file39e07396510f/RSeqLib'  \
-      --library='/gpfs/commons/groups/imielinski_lab/lib/R-3.3.0' --install-tests 
-    
-    Reloading installed RSeqLib
-    Warning message:
-    “replacing previous import ‘data.table::melt’ by ‘reshape2::melt’ when loading ‘RSeqLib’”Warning message:
-    “replacing previous import ‘data.table::dcast’ by ‘reshape2::dcast’ when loading ‘RSeqLib’”
 
 ## Examples 
 
