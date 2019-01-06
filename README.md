@@ -243,7 +243,7 @@ GRanges object with 1 range and 12 metadata columns:
 Attributions
 ------------
 > Marcin Imielinski - Assistant Professor, Weill Cornell Medicine
-> Core Member, New York Genome Center.
+> Core Member, New York Genome Center
 
 > Jeremiah Wala - MD PhD Student, Harvard / MIT / HMS
 
