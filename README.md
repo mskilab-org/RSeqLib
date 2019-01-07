@@ -198,7 +198,6 @@ fermi
 
 ```
 RSeqLib Fermi object with 6365 reads and 43 contigs:
-
 ```
 
 ```R
@@ -214,7 +213,7 @@ gr[1]
 GRanges object with 1 range and 12 metadata columns:
       seqnames        ranges strand |       qname        flag        mapq
          <Rle>     <IRanges>  <Rle> | <character> <character> <character>
-  [1]        1 107677-108408      - |     myquery          16          60
+  [1]     chr2 107677-108408      - |     myquery          16          60
             cigar       rnext       pnext        tlen
       <character> <character> <character> <character>
   [1]        732M           0          -1           0
@@ -224,7 +223,6 @@ GRanges object with 1 range and 12 metadata columns:
              qual        AS        DD    qwidth
       <character> <integer> <integer> <integer>
   [1]           *       732         0       732
-
 ```
 
 Attributions

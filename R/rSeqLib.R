@@ -204,7 +204,7 @@ setMethod('show', 'BWA', function(object)
 #' @title load_index
 #' @description load_index
 #' @export 
-setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqname = 'seq',
+setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqname = NULL,
                                         mc.cores = 1,
                                         hardclip = FALSE,
                                         keep_sec_with_frac_of_primary_score = 0.9,
@@ -226,12 +226,15 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
   else if (!is.null(seq)) {
     if (!is.null(names(seq)))
       seqname = names(seq)
-    
-      if (length(seq) != length(seqname))
-        seqname = data.frame(seq, seqname)[,2]
 
-      if (any(duplicated(seqname)))
-        seqname = dedup(seqname)
+    if (is.null(seqname))
+      seqname = as.character(1:length(seq))
+    
+    if (length(seq) != length(seqname))
+      seqname = data.frame(seq, seqname)[,2]
+    
+    if (any(duplicated(seqname)))
+      seqname = dedup(seqname)
 
     .Object@reference = seq
     .Object@seqlengths = structure(nchar(seq), names =seqname);
@@ -254,7 +257,7 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
 #' @title  BWA
 #' @description BWA
 #' @export
-BWA = function( fasta = NULL, seq = NULL, seqname = 'myseq', mc.cores = 1,
+BWA = function( fasta = NULL, seq = NULL, seqname = NULL, mc.cores = 1,
                                         hardclip = FALSE,
                                         keep_sec_with_frac_of_primary_score = 0.9,
                                         max_secondary = 10)
