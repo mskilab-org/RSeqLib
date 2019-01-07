@@ -81,6 +81,17 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// BWA__seqlengths
+std::string BWA__seqlengths(SEXP xp);
+RcppExport SEXP _RSeqLib_BWA__seqlengths(SEXP xpSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type xp(xpSEXP);
+    rcpp_result_gen = Rcpp::wrap(BWA__seqlengths(xp));
+    return rcpp_result_gen;
+END_RCPP
+}
 // BWA__from_fasta
 void BWA__from_fasta(SEXP xp, std::string& fasta);
 RcppExport SEXP _RSeqLib_BWA__from_fasta(SEXP xpSEXP, SEXP fastaSEXP) {
@@ -128,6 +139,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RSeqLib_Fermi__getContigs", (DL_FUNC) &_RSeqLib_Fermi__getContigs, 1},
     {"_RSeqLib_BWA__new", (DL_FUNC) &_RSeqLib_BWA__new, 0},
     {"_RSeqLib_BWA__from_string", (DL_FUNC) &_RSeqLib_BWA__from_string, 3},
+    {"_RSeqLib_BWA__seqlengths", (DL_FUNC) &_RSeqLib_BWA__seqlengths, 1},
     {"_RSeqLib_BWA__from_fasta", (DL_FUNC) &_RSeqLib_BWA__from_fasta, 2},
     {"_RSeqLib_BWA__query", (DL_FUNC) &_RSeqLib_BWA__query, 6},
     {"_RSeqLib_fastqReader_Open", (DL_FUNC) &_RSeqLib_fastqReader_Open, 1},

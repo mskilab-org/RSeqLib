@@ -33,7 +33,19 @@ public:
     bwa->ConstructIndex(usv);    
     this->bwa = bwa;
   }
-  
+
+  std::string seqlengths()
+  {
+    HeaderSequenceVector hsv = this->bwa->HeaderFromIndex().GetHeaderSequenceVector();
+    std::ostringstream stream;
+    
+    for (auto& this_seq : hsv)
+      stream << this_seq.Name << "\t" << this_seq.Length << std::endl;
+    
+    std::string str =  stream.str();
+    return(str);
+  }
+
   void load_fasta_index(std::string& fasta)  
   { 
     Rcpp::XPtr<BWAWrapper> bwa( new BWAWrapper);
@@ -41,7 +53,7 @@ public:
     this->bwa = bwa;
   }
 
-  std::string query(std::string& query, std::string& qname, bool hardclip, 
+   std::string query(std::string& query, std::string& qname, bool hardclip, 
 		    double keep_sec_with_frac_of_primary_score, int max_secondary)
   {
     BamRecordVector results;
@@ -57,8 +69,6 @@ public:
     //  print results to stdout
     for (auto& i : results)
       stream << i << std::endl;
-
-    //    std::cout << results.size() << std::endl;
     
     std::string str =  stream.str();  
     return(str);
@@ -103,7 +113,6 @@ void Fermi__addReads(SEXP fermi,
                      )
 {
   Rcpp::XPtr<FermiAssembler> fermixp(fermi) ;
-
   UnalignedSequenceVector usv;
 
   for(int i=0; i < qnames.size(); i++)
@@ -159,6 +168,14 @@ void BWA__from_string( SEXP xp,
 {
   Rcpp::XPtr<BWA> bwa(xp) ;
   bwa->make_string_index(seq, seqname);
+}
+
+/** get Header sequence vector*/
+// [[Rcpp::export]]
+std::string BWA__seqlengths( SEXP xp)
+{
+  Rcpp::XPtr<BWA> bwa(xp) ;  
+  return(bwa->seqlengths());
 }
 
 /** grab index from FASTA */

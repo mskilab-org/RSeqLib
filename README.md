@@ -232,6 +232,6 @@ Attributions
 > Marcin Imielinski - Assistant Professor, Weill Cornell Medicine
 > Core Member, New York Genome Center
 
-> Jeremiah Wala - MD PhD Student, Harvard / MIT / HMS
+> Jeremiah Wala - MD PhD Student, Harvard / MIT / HST
 
 > Khagay Nagdimov - Intern, Imielinski Lab, New York Genome Center

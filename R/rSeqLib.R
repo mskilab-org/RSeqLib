@@ -187,7 +187,7 @@ setMethod('reads', 'Fermi', function(.Object)
 setClass( "BWA", representation( bwa = "externalptr",
                                 params = "list",
                                 reference = "character",
-                                seqnames = "character"
+                                seqlengths = "integer"
                                 ), contains = "externalptr" )
 
 #' @name show
@@ -196,7 +196,7 @@ setClass( "BWA", representation( bwa = "externalptr",
 #' @author Marcin Imielinski
 setMethod('show', 'BWA', function(object)
 {
-  message('RSeqLib BWA object with params ', paste(names(object@params), '=', unlist(object@params), collapse = ', '))
+  message('RSeqLib BWA object over ', length(seqlevels(object)), ' sequences spanning ', prettyNum(sum(as.numeric(seqlengths(object))), big.mark = ','), 'bp with params ', paste(names(object@params), '=', unlist(object@params), collapse = ', '))
 })
 
 
@@ -212,7 +212,7 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
                                         )
 {
   .Object@bwa = BWA__new()
-  .Object@seqnames = character()
+  .Object@seqlengths = integer()
   .Object@params = list(
         mc.cores = mc.cores,
         hardclip = hardclip,
@@ -221,6 +221,7 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
   if (!is.null(fasta)) {
     .Object@reference = fasta
     BWA__from_fasta(.Object@bwa, fasta)
+    .Object@seqlengths = fread(text = paste0(BWA__seqlengths(.Object@bwa), '\n'), fill = TRUE, header = FALSE)[nchar(V1)>0, structure(V2, names = V1)]
   }
   else if (!is.null(seq)) {
     if (!is.null(names(seq)))
@@ -233,11 +234,18 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
         seqname = dedup(seqname)
 
     .Object@reference = seq
-    .Object@seqnames = seqname
+    .Object@seqlengths = structure(nchar(seq), names =seqname);
     BWA__from_string(.Object@bwa, seq, seqname)
   }
   else {
     stop('Either fasta or sequence must be provided')
+  }
+
+  ## just
+  if (any(duplicated(names(.Object@seqlengths))))
+  {
+    warning('Reference has one or more duplicated seqnames, deduping names')
+    names(.Object@seqlengths) = dedup(names(.Object@seqlengths))
   }
   return(.Object)
 })
@@ -326,10 +334,7 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
         return(GRanges())
     }
 
-    seqnames = NULL
-    if (length(.Object@seqnames)>0)
-      seqnames = .Object@seqnames
-    tmp = .parse_bam(tmp, seqnames)
+    tmp = .parse_bam(tmp, .Object@seqlengths)
     return(tmp)
 })
 
@@ -340,7 +345,7 @@ setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
 #' @export
 setMethod("[", "BWA", function(x, i) query(x, i))                                      
 
-.parse_bam = function(lines, seqnames = NULL, tags = NULL)
+.parse_bam = function(lines, seqlengths = NULL, tags = NULL)
 {
     fields = c('qname', 'flag', 'rname', 'pos', 'mapq', 'cigar', 'rnext', 'pnext', 'tlen', 'seq', 'qual')
 #    lines = gsub('\n', '', lines)   
@@ -382,15 +387,15 @@ setMethod("[", "BWA", function(x, i) query(x, i))
     bf = out$flag
     
     newdt <- data.table(pos = out$pos, pos2 = out$pos2, strand = out$strand, rname = out$rname)   # create data.table of start, end, strand, seqnames
-    
+
     rr = IRanges(newdt$pos, newdt$pos2)
     sf = factor(newdt$strand, levels=c('+', '-', '*'))
-    if (is.null(seqnames))
+    if (is.null(names(seqlengths)))
     {
       ff = newdt$rname
     }
     else {
-      ff = seqnames[as.integer(as.character(newdt$rname))]
+      ff = names(seqlengths)[as.integer(as.character(newdt$rname))]
     }
     gr.fields <- c("rname", "strand", "pos", "pos2")
     grobj <- GRanges(seqnames=ff, ranges=rr, strand=sf)
@@ -488,6 +493,39 @@ setMethod('genome', 'BWA', function(.Object)
 })
 
 
+#' @name seqlengths
+#' @title seqlength
+#' @description
+#'
+#' Retrieves seqlengths definition from BWA object
+#' @export 
+setMethod('seqlengths', 'BWA', function(.Object)
+{
+  .Object@seqlengths
+})
+
+
+#' @name seqlevels
+#' @title seqlevels
+#' @description
+#'
+#' Retrieves seqlevels definition from BWA object
+#' @export 
+setMethod('seqlevels', 'BWA', function(.Object)
+{
+  names(.Object@seqlengths)
+})
+
+#' @name seqinfo
+#' @title seqinfo
+#' @description
+#'
+#' Retrieves seqinfo definition from BWA object
+#' @export 
+setMethod('seqinfo', 'BWA', function(.Object)
+{
+  Seqinfo(seqnames = names(.Object@seqlengths), seqlengths = unname(.Object@seqlengths))
+})
 
 bamflag = function(reads)
 {

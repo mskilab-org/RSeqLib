@@ -29,6 +29,10 @@ BWA__from_string <- function(xp, seq, seqname) {
     invisible(.Call('_RSeqLib_BWA__from_string', PACKAGE = 'RSeqLib', xp, seq, seqname))
 }
 
+BWA__seqlengths <- function(xp) {
+    .Call('_RSeqLib_BWA__seqlengths', PACKAGE = 'RSeqLib', xp)
+}
+
 BWA__from_fasta <- function(xp, fasta) {
     invisible(.Call('_RSeqLib_BWA__from_fasta', PACKAGE = 'RSeqLib', xp, fasta))
 }
