@@ -118,7 +118,6 @@ genome(bwa)
 
 ```
 [1] "/gpfs/commons/groups/imielinski_lab/git/mskilab/rSeqLib/inst/ext/mini.genome.fasta"
-
 ```
 
 ``` R
