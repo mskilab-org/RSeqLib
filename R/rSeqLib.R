@@ -97,7 +97,7 @@ setMethod('addReads', 'Fermi', function(.Object, reads = NULL, qual = NULL, qnam
         if (!is.data.table(data.frame(reads)))
           reads = as.data.table(reads)
         else
-          reads = copy(readS)
+          reads = copy(reads)
         
         if(is.null(reads$seq))
           stop('if reads is a data.table it must have $seq field at the least')
