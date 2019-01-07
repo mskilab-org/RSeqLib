@@ -202,10 +202,10 @@ RSeqLib Fermi object with 6365 reads and 43 contigs:
 
 ```R
 
-## retrieve the contigs and align back to the reference
+## retrieve the contigs and align back to the reference via BWA object from mini.genome.fasta
 gr = bwa[contigs(fermi)]
 
-## this result is a granges aligned to the fasta corresponding to the bwa object above
+## the first contig alignment comprises 732 bases matching the reference
 gr[1]
 
 ```
