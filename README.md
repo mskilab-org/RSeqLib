@@ -100,6 +100,8 @@ GRanges object with 4 ranges and 12 metadata columns:
 ```R
 ## we can also use a pre existing fasta index
 ## this mini-genome was built using a chunk of hg19 chromosome 2
+## and bwa index was run on the resulting .fasta
+## (yielding files with .amb, .ann. .bwt, .pac, .sa extensions)
 bwa = BWA(system.file('ext/mini.genome.fasta', package = 'RSeqLib'))
 
 ## inspect the bwa object
