@@ -28,4 +28,4 @@ Suggests:
     rtracklayer
 BugReports: http://github.com/mskilab/RSeqLib/issues
 LinkingTo: Rcpp
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
