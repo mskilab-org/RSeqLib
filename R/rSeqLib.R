@@ -36,6 +36,7 @@ setMethod('show', 'Fermi', function(object)
 #' @param qname character vector of qname (default reads are numbered 1:length(reads))
 #' @param assemble logical flag of whether to immediately assemble
 #' @param correct logical flag of whether to error correct if we immediately assemble
+#' @author Marcin Imielinski
 #' @export 
 setMethod('initialize', 'Fermi', function(.Object, reads = NULL, qual = NULL, qname = NULL, assemble = FALSE, correct = TRUE)
 {
@@ -57,6 +58,7 @@ setMethod('initialize', 'Fermi', function(.Object, reads = NULL, qual = NULL, qn
 #' @name Fermi
 #' @title  Fermi
 #' @description initialize Fermi
+#' @author Marcin Imielinski
 #' @export
 Fermi = function(reads = NULL, qual = NULL, qname = NULL, assemble = FALSE, correct = TRUE)
 {
@@ -77,6 +79,7 @@ Fermi = function(reads = NULL, qual = NULL, qname = NULL, assemble = FALSE, corr
 #' @param reads character vector of [ACGT]* OR data.table with columns $seq and optional fields $qual, $qname
 #' @param qual optional character vector of ASCII quality strings, nchar(qual) and nchar(reads) must be identical (default "~")
 #' @param qname character vector of qname (default reads are numbered 1:length(reads))
+#' @author Marcin Imielinski
 #' @export 
 setGeneric('addReads', function(.Object, reads, qual, qname) standardGeneric('addReads'))
 setMethod('addReads', 'Fermi', function(.Object, reads = NULL, qual = NULL, qname = NULL)
@@ -134,6 +137,7 @@ setMethod('addReads', 'Fermi', function(.Object, reads = NULL, qual = NULL, qnam
 #' @description
 #'
 #' Assembles reads in fermi object and creates contig object
+#' @author Marcin Imielinski
 #' @export
 #'
 setGeneric('assemble', function(.Object, ...) standardGeneric('assemble'))
@@ -203,6 +207,7 @@ setMethod('show', 'BWA', function(object)
 #' @name load_index
 #' @title load_index
 #' @description load_index
+#' @author Marcin Imielinski
 #' @export 
 setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqname = NULL,
                                         mc.cores = 1,
@@ -219,11 +224,18 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
         keep_sec_with_frac_of_primary_score = keep_sec_with_frac_of_primary_score,
         max_secondary = max_secondary)
   if (!is.null(fasta)) {
+    fasta = normalizePath(fasta)
+    if (!file.exists(paste0(fasta, '.bwt')))
+      stop(paste('Index files missing for reference', fasta, '.. please generate with bwa index before using rSeqLib'))
+
     .Object@reference = fasta
     BWA__from_fasta(.Object@bwa, fasta)
     .Object@seqlengths = fread(text = paste0(BWA__seqlengths(.Object@bwa), '\n'), fill = TRUE, header = FALSE)[nchar(V1)>0, structure(V2, names = V1)]
   }
   else if (!is.null(seq)) {
+    if (!is.character(seq))
+      seq = as.character(seq)
+
     if (!is.null(names(seq)))
       seqname = names(seq)
 
@@ -256,6 +268,7 @@ setMethod('initialize', 'BWA', function(.Object, fasta = NULL, seq = NULL, seqna
 #' @name BWA
 #' @title  BWA
 #' @description BWA
+#' @author Marcin Imielinski
 #' @export
 BWA = function( fasta = NULL, seq = NULL, seqname = NULL, mc.cores = 1,
                                         hardclip = FALSE,
@@ -314,37 +327,54 @@ setMethod('$<-', 'BWA', function(x, name, value)
 #' @param hardclip logical flag whether to hardclip alignments (default FALSE)
 #' @param keep_sec_with_frac_of_primary_score BWA threshold for keeping secondary alignments
 #' @param max_secondary integer max number of alignments to keep
+#' @author Marcin Imielinski
 #' @export
 setGeneric('query', function(.Object,...) standardGeneric('query'))
-setMethod("query", "BWA", function(.Object, qstring, qname = 'myquery',
+setMethod("query", "BWA", function(.Object, qstring, qname = NULL,
                                    mc.cores = .Object$mc.cores,
                   hardclip = FALSE,
                   keep_sec_with_frac_of_primary_score = 0.9,
                   max_secondary = 10)
 {
-    if (!is.null(names(qstring))) {
-        qname = names(qstring)
-    }
-    else if (length(qname)==1) {
-        qname = rep(qname, length(qstring))
-    }
-    tmp = unlist(mcmapply(function(q, qn)
-        strsplit(BWA__query(.Object@bwa, q, qn, hardclip,
-                   keep_sec_with_frac_of_primary_score,
-                   max_secondary), '\n'), qstring, qname, mc.cores = mc.cores))
-    
-    if (sum(nchar(tmp))==0) {
+  if (!length(qstring))
+    return(GRanges())
+
+  if (!is.null(names(qstring))) {
+    qname = names(qstring)
+  }
+  
+  if (is.null(qname))
+  {
+    qname = as.character(1:length(qstring))
+  }
+
+  if (!is.character(qstring))
+    qstring = as.character(qstring)
+
+  #  else if (length(qname)==1) {
+   #     qname = rep(qname, length(qstring))
+   # }
+  tmp = mcmapply(function(q, qn)
+    strsplit(BWA__query(.Object@bwa, q, qn, hardclip,
+                        keep_sec_with_frac_of_primary_score,
+                        max_secondary), '\n'), qstring, qname, mc.cores = mc.cores)
+  
+  names(tmp) = qname
+  tmp = unlist(tmp)
+  
+  if (sum(nchar(tmp))==0) {
         return(GRanges())
     }
 
-    tmp = .parse_bam(tmp, .Object@seqlengths)
-    return(tmp)
+  tmp = .parse_bam(tmp, .Object@seqlengths)
+  return(tmp)
 })
 
 
 #' @name [
 #' @title [
 #' @description  query
+#' @author Marcin Imielinski
 #' @export
 setMethod("[", "BWA", function(x, i) query(x, i))                                      
 
@@ -353,6 +383,7 @@ setMethod("[", "BWA", function(x, i) query(x, i))
     fields = c('qname', 'flag', 'rname', 'pos', 'mapq', 'cigar', 'rnext', 'pnext', 'tlen', 'seq', 'qual')
 #    lines = gsub('\n', '', lines)   
     linesp = strsplit(lines, '\t')
+
     chunk = data.table::as.data.table(do.call(rbind, lapply(linesp, function(x) x[1:11])))
     chunk$line = 1:length(chunk$V1)
     ## figure out the optional columns of the BAM read and annotate them. 
@@ -371,7 +402,7 @@ setMethod("[", "BWA", function(x, i) query(x, i))
 
     cigs = countCigar(out$cigar)
 
-    out$pos = as.numeric(out$pos)
+    out$pos = as.numeric(out$pos)+1
     
     out$pos2 <- out$pos + rowSums(cigs[, c("D", "M"), drop = FALSE], na.rm=T) - 1
         
@@ -455,6 +486,7 @@ munlist = function(x, force.rbind = F, force.cbind = F, force.list = F)
 #' Counts the total number of bases, per cigar, that fall into D, I, M, S categories.
 #' countCigar makes no distinction between, for instance 1S2M2S, 2S2M1S, or 3S2M
 #' @param cigar character vector of cigar strings
+#' @author Jeremiah Wala
 #' @return a 4-column, length(cigar)-row matrix with the total counts for each type
 countCigar <- function(cigar) {
     

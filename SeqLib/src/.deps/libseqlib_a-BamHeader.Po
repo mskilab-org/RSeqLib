@@ -1,7 +1,7 @@
 libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
  ../SeqLib/BamHeader.h ../htslib/htslib/hts.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stddef.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdint.h \
  /usr/include/stdint.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h /usr/include/bits/wchar.h \
@@ -9,7 +9,7 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
  ../htslib/htslib/hts.h ../htslib/htslib/bgzf.h /usr/include/stdio.h \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/bits/stdio.h /usr/include/zlib.h /usr/include/zconf.h \
  /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
@@ -20,114 +20,165 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/pthreadtypes.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
- ../htslib/htslib/kstring.h /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/xlocale.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/string.h \
- ../SeqLib/SeqLibUtils.h /usr/include/c++/4.8.2/string \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h \
- /usr/include/c++/4.8.2/bits/stringfwd.h \
- /usr/include/c++/4.8.2/bits/memoryfwd.h \
- /usr/include/c++/4.8.2/bits/char_traits.h \
- /usr/include/c++/4.8.2/bits/stl_algobase.h \
- /usr/include/c++/4.8.2/bits/functexcept.h \
- /usr/include/c++/4.8.2/bits/exception_defines.h \
- /usr/include/c++/4.8.2/bits/cpp_type_traits.h \
- /usr/include/c++/4.8.2/ext/type_traits.h \
- /usr/include/c++/4.8.2/ext/numeric_traits.h \
- /usr/include/c++/4.8.2/bits/stl_pair.h \
- /usr/include/c++/4.8.2/bits/move.h \
- /usr/include/c++/4.8.2/bits/concept_check.h \
- /usr/include/c++/4.8.2/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.8.2/debug/debug.h \
- /usr/include/c++/4.8.2/bits/stl_iterator.h \
- /usr/include/c++/4.8.2/bits/postypes.h /usr/include/c++/4.8.2/cwchar \
- /usr/include/c++/4.8.2/bits/allocator.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/4.8.2/ext/new_allocator.h /usr/include/c++/4.8.2/new \
- /usr/include/c++/4.8.2/exception \
- /usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.8.2/bits/localefwd.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h \
- /usr/include/c++/4.8.2/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/4.8.2/iosfwd \
- /usr/include/c++/4.8.2/cctype /usr/include/ctype.h \
- /usr/include/c++/4.8.2/bits/ostream_insert.h \
- /usr/include/c++/4.8.2/bits/cxxabi_forced.h \
- /usr/include/c++/4.8.2/bits/stl_function.h \
- /usr/include/c++/4.8.2/backward/binders.h \
- /usr/include/c++/4.8.2/bits/range_access.h \
- /usr/include/c++/4.8.2/bits/basic_string.h \
- /usr/include/c++/4.8.2/ext/atomicity.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h \
+ ../htslib/htslib/kstring.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdlib.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdlib \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/os_defines.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/xlocale.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/std_abs.h \
+ /usr/include/string.h ../SeqLib/SeqLibUtils.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/string \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stringfwd.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/memoryfwd.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/char_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algobase.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functexcept.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_defines.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cpp_type_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/type_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/numeric_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_pair.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/move.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/concept_check.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/type_traits \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_types.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_funcs.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/assertions.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ptr_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/debug.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/predefined_ops.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/postypes.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwchar \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdint \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocator.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/new_allocator.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/new \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/exception \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_ptr.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_init_exception.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/typeinfo \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hash_bytes.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/nested_exception.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/localefwd.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iosfwd \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cctype /usr/include/ctype.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream_insert.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_forced.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_function.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/binders.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/range_access.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/initializer_list \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/atomicity.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
  /usr/include/bits/timex.h /usr/include/bits/setjmp.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h \
- /usr/include/c++/4.8.2/bits/basic_string.tcc \
- /usr/include/c++/4.8.2/ctime /usr/include/c++/4.8.2/vector \
- /usr/include/c++/4.8.2/bits/stl_construct.h \
- /usr/include/c++/4.8.2/ext/alloc_traits.h \
- /usr/include/c++/4.8.2/bits/stl_uninitialized.h \
- /usr/include/c++/4.8.2/bits/stl_vector.h \
- /usr/include/c++/4.8.2/bits/stl_bvector.h \
- /usr/include/c++/4.8.2/bits/vector.tcc /usr/include/c++/4.8.2/sstream \
- /usr/include/c++/4.8.2/istream /usr/include/c++/4.8.2/ios \
- /usr/include/c++/4.8.2/bits/ios_base.h \
- /usr/include/c++/4.8.2/bits/locale_classes.h \
- /usr/include/c++/4.8.2/bits/locale_classes.tcc \
- /usr/include/c++/4.8.2/streambuf \
- /usr/include/c++/4.8.2/bits/streambuf.tcc \
- /usr/include/c++/4.8.2/bits/basic_ios.h \
- /usr/include/c++/4.8.2/bits/locale_facets.h \
- /usr/include/c++/4.8.2/cwctype /usr/include/wctype.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_base.h \
- /usr/include/c++/4.8.2/bits/streambuf_iterator.h \
- /usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h \
- /usr/include/c++/4.8.2/bits/locale_facets.tcc \
- /usr/include/c++/4.8.2/bits/basic_ios.tcc /usr/include/c++/4.8.2/ostream \
- /usr/include/c++/4.8.2/bits/ostream.tcc \
- /usr/include/c++/4.8.2/bits/istream.tcc \
- /usr/include/c++/4.8.2/bits/sstream.tcc /usr/include/c++/4.8.2/cmath \
- /usr/include/math.h /usr/include/bits/huge_val.h \
- /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
- /usr/include/bits/inf.h /usr/include/bits/nan.h \
- /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
- /usr/include/bits/mathinline.h /usr/include/c++/4.8.2/algorithm \
- /usr/include/c++/4.8.2/utility /usr/include/c++/4.8.2/bits/stl_relops.h \
- /usr/include/c++/4.8.2/bits/stl_algo.h /usr/include/c++/4.8.2/cstdlib \
- /usr/include/c++/4.8.2/bits/algorithmfwd.h \
- /usr/include/c++/4.8.2/bits/stl_heap.h \
- /usr/include/c++/4.8.2/bits/stl_tempbuf.h ../SeqLib/SeqLibCommon.h \
- /usr/include/c++/4.8.2/tr1/memory /usr/include/c++/4.8.2/memory \
- /usr/include/c++/4.8.2/bits/stl_raw_storage_iter.h \
- /usr/include/c++/4.8.2/backward/auto_ptr.h \
- /usr/include/c++/4.8.2/typeinfo /usr/include/c++/4.8.2/ext/concurrence.h \
- /usr/include/c++/4.8.2/tr1/type_traits \
- /usr/include/c++/4.8.2/tr1/shared_ptr.h \
- /usr/include/c++/4.8.2/tr1/unordered_set \
- /usr/include/c++/4.8.2/tr1/functional_hash.h \
- /usr/include/c++/4.8.2/tr1/hashtable.h \
- /usr/include/c++/4.8.2/tr1/hashtable_policy.h \
- /usr/include/c++/4.8.2/tr1/unordered_set.h \
- /usr/include/c++/4.8.2/tr1/unordered_map \
- /usr/include/c++/4.8.2/tr1/unordered_map.h ../SeqLib/BamWalker.h \
- /usr/include/c++/4.8.2/cassert /usr/include/assert.h \
- ../SeqLib/BamRecord.h /usr/include/c++/4.8.2/iostream \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/alloc_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/alloc_traits.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/string_conversions.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdio \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functional_hash.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ctime \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/vector \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_construct.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_uninitialized.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_vector.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_bvector.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/vector.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/sstream \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/istream \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ios \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ios_base.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/system_error \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/error_constants.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdexcept \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/streambuf \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwctype /usr/include/wctype.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf_iterator.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ostream \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/istream.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/sstream.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cmath /usr/include/math.h \
+ /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
+ /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
+ /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/algorithm \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/utility \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_relops.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algo.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/algorithmfwd.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_heap.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_tempbuf.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uniform_int_dist.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/limits ../SeqLib/SeqLibCommon.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/memory \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_raw_storage_iter.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/concurrence.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uses_allocator.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unique_ptr.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/tuple \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/array \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/invoke.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_base.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocated_ptr.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/refwrap.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/aligned_buffer.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_atomic.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_base.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_lockfree_defines.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/auto_ptr.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_set \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable_policy.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_set.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/erase_if.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_map \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_map.h \
+ ../SeqLib/BamWalker.h /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cassert \
+ /usr/include/assert.h ../SeqLib/BamRecord.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iostream \
  ../htslib/htslib/faidx.h ../SeqLib/GenomicRegion.h \
- /usr/include/c++/4.8.2/list /usr/include/c++/4.8.2/bits/stl_list.h \
- /usr/include/c++/4.8.2/bits/list.tcc /usr/include/c++/4.8.2/cstring \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/list \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_list.h \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/list.tcc \
+ /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstring \
  ../SeqLib/UnalignedSequence.h ../bwa/bwa.h ../bwa/bntseq.h ../bwa/bwt.h \
  ../bwa/bwt.h ../bwa/bntseq.h ../bwa/kseq.h ../bwa/utils.h \
  ../bwa/bwamem.h ../bwa/bwa.h ../htslib/cram/cram.h \
  ../htslib/cram/cram_samtools.h ../htslib/htslib/sam.h \
  ../htslib/cram/sam_header.h ../htslib/cram/string_alloc.h \
  ../htslib/cram/pooled_alloc.h ../htslib/htslib/khash.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/limits.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
@@ -137,8 +188,7 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
  /usr/include/inttypes.h ../htslib/cram/cram_encode.h \
  ../htslib/cram/cram_decode.h ../htslib/cram/cram_stats.h \
  ../htslib/cram/cram_codecs.h ../htslib/cram/cram_index.h \
- ../htslib/htslib/cram.h ../htslib/cram/cram_io.h \
- /usr/include/c++/4.8.2/stdexcept
+ ../htslib/htslib/cram.h ../htslib/cram/cram_io.h
 
 /usr/include/stdc-predef.h:
 
@@ -146,9 +196,9 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 ../htslib/htslib/hts.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stddef.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdint.h:
 
 /usr/include/stdint.h:
 
@@ -184,7 +234,7 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 /usr/include/wchar.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdarg.h:
 
 /usr/include/bits/stdio_lim.h:
 
@@ -232,6 +282,16 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 ../htslib/htslib/kstring.h:
 
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdlib.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdlib:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++config.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+
 /usr/include/stdlib.h:
 
 /usr/include/bits/waitflags.h:
@@ -244,99 +304,117 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/stdlib-float.h:
 
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/std_abs.h:
+
 /usr/include/string.h:
 
 ../SeqLib/SeqLibUtils.h:
 
-/usr/include/c++/4.8.2/string:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/string:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++config.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stringfwd.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/os_defines.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/memoryfwd.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/cpu_defines.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/char_traits.h:
 
-/usr/include/c++/4.8.2/bits/stringfwd.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algobase.h:
 
-/usr/include/c++/4.8.2/bits/memoryfwd.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functexcept.h:
 
-/usr/include/c++/4.8.2/bits/char_traits.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_defines.h:
 
-/usr/include/c++/4.8.2/bits/stl_algobase.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cpp_type_traits.h:
 
-/usr/include/c++/4.8.2/bits/functexcept.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/type_traits.h:
 
-/usr/include/c++/4.8.2/bits/exception_defines.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/numeric_traits.h:
 
-/usr/include/c++/4.8.2/bits/cpp_type_traits.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_pair.h:
 
-/usr/include/c++/4.8.2/ext/type_traits.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/move.h:
 
-/usr/include/c++/4.8.2/ext/numeric_traits.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/concept_check.h:
 
-/usr/include/c++/4.8.2/bits/stl_pair.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/type_traits:
 
-/usr/include/c++/4.8.2/bits/move.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_types.h:
 
-/usr/include/c++/4.8.2/bits/concept_check.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_funcs.h:
 
-/usr/include/c++/4.8.2/bits/stl_iterator_base_types.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/assertions.h:
 
-/usr/include/c++/4.8.2/bits/stl_iterator_base_funcs.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator.h:
 
-/usr/include/c++/4.8.2/debug/debug.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ptr_traits.h:
 
-/usr/include/c++/4.8.2/bits/stl_iterator.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/debug.h:
 
-/usr/include/c++/4.8.2/bits/postypes.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/predefined_ops.h:
 
-/usr/include/c++/4.8.2/cwchar:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/postypes.h:
 
-/usr/include/c++/4.8.2/bits/allocator.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwchar:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++allocator.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdint:
 
-/usr/include/c++/4.8.2/ext/new_allocator.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocator.h:
 
-/usr/include/c++/4.8.2/new:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
-/usr/include/c++/4.8.2/exception:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/new_allocator.h:
 
-/usr/include/c++/4.8.2/bits/atomic_lockfree_defines.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/new:
 
-/usr/include/c++/4.8.2/bits/localefwd.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/exception:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/c++locale.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception.h:
 
-/usr/include/c++/4.8.2/clocale:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_ptr.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_init_exception.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/typeinfo:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hash_bytes.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/nested_exception.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/localefwd.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/clocale:
 
 /usr/include/locale.h:
 
 /usr/include/bits/locale.h:
 
-/usr/include/c++/4.8.2/iosfwd:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iosfwd:
 
-/usr/include/c++/4.8.2/cctype:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cctype:
 
 /usr/include/ctype.h:
 
-/usr/include/c++/4.8.2/bits/ostream_insert.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream_insert.h:
 
-/usr/include/c++/4.8.2/bits/cxxabi_forced.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_forced.h:
 
-/usr/include/c++/4.8.2/bits/stl_function.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_function.h:
 
-/usr/include/c++/4.8.2/backward/binders.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/binders.h:
 
-/usr/include/c++/4.8.2/bits/range_access.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/range_access.h:
 
-/usr/include/c++/4.8.2/bits/basic_string.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/initializer_list:
 
-/usr/include/c++/4.8.2/ext/atomicity.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/atomicity.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/gthr-default.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
 /usr/include/pthread.h:
 
@@ -348,69 +426,97 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/setjmp.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/atomic_word.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h:
 
-/usr/include/c++/4.8.2/bits/basic_string.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/alloc_traits.h:
 
-/usr/include/c++/4.8.2/ctime:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/alloc_traits.h:
 
-/usr/include/c++/4.8.2/vector:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/string_conversions.h:
 
-/usr/include/c++/4.8.2/bits/stl_construct.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdio:
 
-/usr/include/c++/4.8.2/ext/alloc_traits.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cerrno:
 
-/usr/include/c++/4.8.2/bits/stl_uninitialized.h:
+/usr/include/errno.h:
 
-/usr/include/c++/4.8.2/bits/stl_vector.h:
+/usr/include/bits/errno.h:
 
-/usr/include/c++/4.8.2/bits/stl_bvector.h:
+/usr/include/linux/errno.h:
 
-/usr/include/c++/4.8.2/bits/vector.tcc:
+/usr/include/asm/errno.h:
 
-/usr/include/c++/4.8.2/sstream:
+/usr/include/asm-generic/errno.h:
 
-/usr/include/c++/4.8.2/istream:
+/usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/4.8.2/ios:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functional_hash.h:
 
-/usr/include/c++/4.8.2/bits/ios_base.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.tcc:
 
-/usr/include/c++/4.8.2/bits/locale_classes.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ctime:
 
-/usr/include/c++/4.8.2/bits/locale_classes.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/vector:
 
-/usr/include/c++/4.8.2/streambuf:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_construct.h:
 
-/usr/include/c++/4.8.2/bits/streambuf.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_uninitialized.h:
 
-/usr/include/c++/4.8.2/bits/basic_ios.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_vector.h:
 
-/usr/include/c++/4.8.2/bits/locale_facets.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_bvector.h:
 
-/usr/include/c++/4.8.2/cwctype:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/vector.tcc:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/sstream:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/istream:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ios:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ios_base.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.tcc:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/system_error:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdexcept:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/streambuf:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf.tcc:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwctype:
 
 /usr/include/wctype.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_base.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
-/usr/include/c++/4.8.2/bits/streambuf_iterator.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf_iterator.h:
 
-/usr/include/c++/4.8.2/x86_64-redhat-linux/bits/ctype_inline.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_inline.h:
 
-/usr/include/c++/4.8.2/bits/locale_facets.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.tcc:
 
-/usr/include/c++/4.8.2/bits/basic_ios.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.tcc:
 
-/usr/include/c++/4.8.2/ostream:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ostream:
 
-/usr/include/c++/4.8.2/bits/ostream.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream.tcc:
 
-/usr/include/c++/4.8.2/bits/istream.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/istream.tcc:
 
-/usr/include/c++/4.8.2/bits/sstream.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/sstream.tcc:
 
-/usr/include/c++/4.8.2/cmath:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cmath:
 
 /usr/include/math.h:
 
@@ -430,75 +536,95 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/mathinline.h:
 
-/usr/include/c++/4.8.2/algorithm:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/algorithm:
 
-/usr/include/c++/4.8.2/utility:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/utility:
 
-/usr/include/c++/4.8.2/bits/stl_relops.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_relops.h:
 
-/usr/include/c++/4.8.2/bits/stl_algo.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algo.h:
 
-/usr/include/c++/4.8.2/cstdlib:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/algorithmfwd.h:
 
-/usr/include/c++/4.8.2/bits/algorithmfwd.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_heap.h:
 
-/usr/include/c++/4.8.2/bits/stl_heap.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_tempbuf.h:
 
-/usr/include/c++/4.8.2/bits/stl_tempbuf.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uniform_int_dist.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/limits:
 
 ../SeqLib/SeqLibCommon.h:
 
-/usr/include/c++/4.8.2/tr1/memory:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/memory:
 
-/usr/include/c++/4.8.2/memory:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_raw_storage_iter.h:
 
-/usr/include/c++/4.8.2/bits/stl_raw_storage_iter.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/concurrence.h:
 
-/usr/include/c++/4.8.2/backward/auto_ptr.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uses_allocator.h:
 
-/usr/include/c++/4.8.2/typeinfo:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unique_ptr.h:
 
-/usr/include/c++/4.8.2/ext/concurrence.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/tuple:
 
-/usr/include/c++/4.8.2/tr1/type_traits:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/array:
 
-/usr/include/c++/4.8.2/tr1/shared_ptr.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/invoke.h:
 
-/usr/include/c++/4.8.2/tr1/unordered_set:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr.h:
 
-/usr/include/c++/4.8.2/tr1/functional_hash.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_base.h:
 
-/usr/include/c++/4.8.2/tr1/hashtable.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocated_ptr.h:
 
-/usr/include/c++/4.8.2/tr1/hashtable_policy.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/refwrap.h:
 
-/usr/include/c++/4.8.2/tr1/unordered_set.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/aligned_buffer.h:
 
-/usr/include/c++/4.8.2/tr1/unordered_map:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_atomic.h:
 
-/usr/include/c++/4.8.2/tr1/unordered_map.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_base.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_lockfree_defines.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/auto_ptr.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_set:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable_policy.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_set.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/erase_if.h:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_map:
+
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_map.h:
 
 ../SeqLib/BamWalker.h:
 
-/usr/include/c++/4.8.2/cassert:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cassert:
 
 /usr/include/assert.h:
 
 ../SeqLib/BamRecord.h:
 
-/usr/include/c++/4.8.2/iostream:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iostream:
 
 ../htslib/htslib/faidx.h:
 
 ../SeqLib/GenomicRegion.h:
 
-/usr/include/c++/4.8.2/list:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/list:
 
-/usr/include/c++/4.8.2/bits/stl_list.h:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_list.h:
 
-/usr/include/c++/4.8.2/bits/list.tcc:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/list.tcc:
 
-/usr/include/c++/4.8.2/cstring:
+/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstring:
 
 ../SeqLib/UnalignedSequence.h:
 
@@ -534,9 +660,9 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 
 ../htslib/htslib/khash.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/limits.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/limits.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/syslimits.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -579,5 +705,3 @@ libseqlib_a-BamHeader.o: BamHeader.cpp /usr/include/stdc-predef.h \
 ../htslib/htslib/cram.h:
 
 ../htslib/cram/cram_io.h:
-
-/usr/include/c++/4.8.2/stdexcept:

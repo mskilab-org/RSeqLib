@@ -1,12 +1,12 @@
 libseqlib_a-ssw.o: ssw.c /usr/include/stdc-predef.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/emmintrin.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mmintrin.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mm_malloc.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/emmintrin.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/xmmintrin.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/mmintrin.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/mm_malloc.h \
  /usr/include/stdlib.h /usr/include/features.h /usr/include/sys/cdefs.h \
  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/byteswap.h /usr/include/bits/types.h \
@@ -16,10 +16,10 @@ libseqlib_a-ssw.o: ssw.c /usr/include/stdc-predef.h \
  /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
  /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/stdio.h \
  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
+ /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdarg.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
  /usr/include/string.h /usr/include/xlocale.h /usr/include/math.h \
  /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
@@ -29,13 +29,13 @@ libseqlib_a-ssw.o: ssw.c /usr/include/stdc-predef.h \
 
 /usr/include/stdc-predef.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/emmintrin.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/emmintrin.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/xmmintrin.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/xmmintrin.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mmintrin.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/mmintrin.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/mm_malloc.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/mm_malloc.h:
 
 /usr/include/stdlib.h:
 
@@ -49,7 +49,7 @@ libseqlib_a-ssw.o: ssw.c /usr/include/stdc-predef.h \
 
 /usr/include/gnu/stubs-64.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stddef.h:
 
 /usr/include/bits/waitflags.h:
 
@@ -87,7 +87,7 @@ libseqlib_a-ssw.o: ssw.c /usr/include/stdc-predef.h \
 
 /usr/include/bits/stdlib-float.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdint.h:
 
 /usr/include/stdint.h:
 
@@ -101,7 +101,7 @@ libseqlib_a-ssw.o: ssw.c /usr/include/stdc-predef.h \
 
 /usr/include/wchar.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h:
+/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdarg.h:
 
 /usr/include/bits/stdio_lim.h:
 
