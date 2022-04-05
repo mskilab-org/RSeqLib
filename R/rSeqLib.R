@@ -1,6 +1,6 @@
 #' @useDynLib RSeqLib
 #' @importFrom Rcpp sourceCpp
-#' @import data.table reshape2
+#' @import data.table reshape2 parallel
 NULL
 
 
@@ -354,10 +354,10 @@ setMethod("query", "BWA", function(.Object, qstring, qname = NULL,
   #  else if (length(qname)==1) {
    #     qname = rep(qname, length(qstring))
    # }
-  tmp = mcmapply(function(q, qn)
-    strsplit(BWA__query(.Object@bwa, q, qn, hardclip,
-                        keep_sec_with_frac_of_primary_score,
-                        max_secondary), '\n'), qstring, qname, mc.cores = mc.cores)
+  tmp = parallel::mcmapply(function(q, qn)
+      strsplit(BWA__query(.Object@bwa, q, qn, hardclip,
+                          keep_sec_with_frac_of_primary_score,
+                          max_secondary), '\n'), qstring, qname, mc.cores = mc.cores)
   
   names(tmp) = qname
   tmp = unlist(tmp)
