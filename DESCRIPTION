@@ -12,7 +12,10 @@ Description: One paragraph description of what the package does as one
     or more full sentences.
 License: GPL (>= 2)
 Remotes:
-  github::mskilab/gUtils
+  github::mskilab/gUtils,
+  bioc::3.10/BSgenome.Hsapiens.UCSC.hg19,
+  bioc::3.10/GenomicAlignments,
+  bioc::3.10/rtracklayer
 Depends:
     R (>= 3.6.0),
     data.table (>= 1.11),
