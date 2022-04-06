@@ -11,20 +11,20 @@ Maintainer: Marcin Imielinski <mimielinski@nygenome.org>
 Description: One paragraph description of what the package does as one
     or more full sentences.
 License: GPL (>= 2)
+Remotes:
+  github::mskilab/gUtils
 Depends:
-    gUtils,
-    data.table,        
-    parallel
+    R (>= 3.6.0),
+    data.table (>= 1.11),
+    gUtils
 Imports:
     Rcpp (>= 0.12),
     reshape2,
     GenomicAlignments,
-    data.table
-Remotes:
-  github::mskilab/gUtils
+    parallel
 Suggests:
     BSgenome.Hsapiens.UCSC.hg19,
-    testthat,
+    testthat (>= 2.0),
     rtracklayer
 BugReports: http://github.com/mskilab/RSeqLib/issues
 LinkingTo: Rcpp
