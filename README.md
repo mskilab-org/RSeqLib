@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mskilab/RSeqLib.svg?branch=master)](https://travis-ci.org/mskilab/RSeqLib)
+![Build Status](https://github.com/mskilab/RSeqLib/actions/workflows/check-release.yaml/badge.svg) 
 [![codecov.io](https://img.shields.io/codecov/c/github/mskilab/RSeqLib.svg)](https://codecov.io/github/mskilab/RSeqLib?branch=master)
 
 
