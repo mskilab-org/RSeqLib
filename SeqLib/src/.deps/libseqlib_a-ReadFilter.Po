@@ -1,218 +1,241 @@
 libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
- ../SeqLib/ReadFilter.h /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/string \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/os_defines.h \
+ ../SeqLib/ReadFilter.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/string \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++config.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/os_defines.h \
  /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stringfwd.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/memoryfwd.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/char_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algobase.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functexcept.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_defines.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cpp_type_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/type_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/numeric_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_pair.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/move.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/concept_check.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/type_traits \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_types.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_funcs.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/assertions.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ptr_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/debug.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/predefined_ops.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/postypes.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwchar /usr/include/wchar.h \
- /usr/include/stdio.h \
- /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdarg.h \
- /usr/include/bits/wchar.h \
- /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stddef.h \
- /usr/include/xlocale.h /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdint \
- /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdint.h \
- /usr/include/stdint.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocator.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/new_allocator.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/new \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/exception \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_ptr.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_init_exception.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/typeinfo \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hash_bytes.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/nested_exception.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/localefwd.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++locale.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iosfwd \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cctype /usr/include/ctype.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stringfwd.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/memoryfwd.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/char_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_algobase.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/functexcept.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/exception_defines.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/cpp_type_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/type_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/numeric_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_pair.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/move.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/concept_check.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/type_traits \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_iterator_base_types.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_iterator_base_funcs.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/debug/assertions.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_iterator.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ptr_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/debug/debug.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/predefined_ops.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/postypes.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cwchar /usr/include/wchar.h \
+ /usr/include/bits/libc-header-start.h /usr/include/bits/floatn.h \
+ /usr/include/bits/floatn-common.h \
+ /gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include/stddef.h \
+ /gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include/stdarg.h \
+ /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
+ /usr/include/bits/types/mbstate_t.h \
+ /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstdint \
+ /gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/stdint-intn.h \
+ /usr/include/bits/stdint-uintn.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/allocator.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++allocator.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/new_allocator.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/new \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/exception \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/atomic_lockfree_defines.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/exception_ptr.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/nested_exception.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/localefwd.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/clocale \
+ /usr/include/locale.h /usr/include/bits/locale.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/iosfwd \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cctype /usr/include/ctype.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream_insert.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_forced.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_function.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/binders.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/range_access.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/initializer_list \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/atomicity.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
- /usr/include/bits/sched.h /usr/include/bits/time.h \
- /usr/include/bits/timex.h /usr/include/bits/pthreadtypes.h \
- /usr/include/bits/setjmp.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/alloc_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/alloc_traits.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/string_conversions.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdlib /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/sys/types.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/sigset.h \
- /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ostream_insert.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/cxxabi_forced.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_function.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/backward/binders.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/range_access.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/initializer_list \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_string.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/atomicity.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/gthr.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/types/struct_itimerspec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/setjmp.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/alloc_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/alloc_traits.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/string_conversions.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstdlib \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
  /usr/include/bits/stdlib-float.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/std_abs.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdio /usr/include/libio.h \
- /usr/include/_G_config.h /usr/include/bits/stdio_lim.h \
- /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cerrno /usr/include/errno.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstdio /usr/include/stdio.h \
+ /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cerrno /usr/include/errno.h \
  /usr/include/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
- /usr/include/asm-generic/errno-base.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functional_hash.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/vector \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_construct.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_uninitialized.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_vector.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_bvector.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/vector.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/climits \
- /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/limits.h \
- /nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/syslimits.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/functional_hash.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/hash_bytes.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_string.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/vector \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_construct.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_uninitialized.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_vector.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_bvector.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/vector.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/climits \
+ /gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include-fixed/limits.h \
+ /gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- ../json/json.h /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/map \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_tree.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/aligned_buffer.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_map.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/tuple \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/utility \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_relops.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/array \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdexcept \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uses_allocator.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/invoke.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_multimap.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/erase_if.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/deque \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_deque.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/deque.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stack \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_stack.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/istream \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ios \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ios_base.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/system_error \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/error_constants.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/streambuf \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwctype /usr/include/wctype.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf_iterator.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ostream \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/istream.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdlib.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/sstream \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/sstream.tcc \
+ /usr/include/bits/uio_lim.h ../json/json.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/map \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_tree.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/aligned_buffer.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_map.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/tuple \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/utility \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_relops.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/array \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/stdexcept \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/uses_allocator.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_multimap.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/deque \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_deque.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/deque.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/stack \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_stack.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/istream \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ios \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ios_base.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_classes.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_classes.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/system_error \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/error_constants.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/streambuf \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/streambuf.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_ios.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_facets.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cwctype \
+ /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/streambuf_iterator.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_facets.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_ios.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ostream \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ostream.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/istream.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/stdlib.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/sstream \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/sstream.tcc \
  ../SeqLib/GenomicRegionCollection.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/list \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_list.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocated_ptr.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/list.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/list \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_list.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/allocated_ptr.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/list.tcc \
  ../SeqLib/IntervalTree.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/algorithm \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algo.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/algorithmfwd.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_heap.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_tempbuf.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uniform_int_dist.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/limits \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iostream ../SeqLib/BamRecord.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cassert /usr/include/assert.h \
- ../htslib/htslib/hts.h ../htslib/htslib/hts_defs.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/algorithm \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_algo.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/algorithmfwd.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_heap.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_tempbuf.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/uniform_int_dist.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/limits \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/iostream \
+ ../SeqLib/BamRecord.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cassert \
+ /usr/include/assert.h ../htslib/htslib/hts.h ../htslib/htslib/hts_defs.h \
  ../htslib/htslib/sam.h ../htslib/htslib/hts.h ../htslib/htslib/bgzf.h \
- /usr/include/zlib.h /usr/include/zconf.h /usr/include/unistd.h \
+ /gpfs/share/apps/zlib/1.2.11/include/zlib.h \
+ /gpfs/share/apps/zlib/1.2.11/include/zconf.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
- /usr/include/bits/confname.h /usr/include/getopt.h \
- ../htslib/htslib/kstring.h /usr/include/string.h \
- ../htslib/htslib/faidx.h ../SeqLib/SeqLibUtils.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ctime \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cmath /usr/include/math.h \
- /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
- /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
- /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
- ../SeqLib/SeqLibCommon.h /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/memory \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_raw_storage_iter.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/concurrence.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unique_ptr.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_base.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/refwrap.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_atomic.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_base.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_lockfree_defines.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/auto_ptr.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_set \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable_policy.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_set.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_map \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_map.h \
+ /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
+ /usr/include/bits/getopt_core.h ../htslib/htslib/kstring.h \
+ /usr/include/string.h /usr/include/strings.h ../htslib/htslib/faidx.h \
+ ../SeqLib/SeqLibUtils.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ctime \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/bits/mathinline.h \
+ ../SeqLib/SeqLibCommon.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/memory \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_raw_storage_iter.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/typeinfo \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/concurrence.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/functional \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/unique_ptr.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/shared_ptr.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/shared_ptr_base.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/shared_ptr_atomic.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/atomic_base.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/backward/auto_ptr.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/unordered_set \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/hashtable.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/hashtable_policy.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/unordered_set.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/unordered_map \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/unordered_map.h \
  ../SeqLib/GenomicRegion.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstring ../SeqLib/BamHeader.h \
- ../SeqLib/UnalignedSequence.h ../bwa/bwa.h ../bwa/bntseq.h ../bwa/bwt.h \
- ../bwa/bwt.h ../bwa/bntseq.h ../bwa/kseq.h ../bwa/utils.h \
- ../bwa/bwamem.h ../bwa/bwa.h ../SeqLib/GenomicRegionCollection.cpp \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/fstream \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/codecvt.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/basic_file.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++io.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/fstream.tcc \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/set \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_set.h \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_multiset.h \
- ../SeqLib/aho_corasick.hpp /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/queue \
- /nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_queue.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstring \
+ ../SeqLib/BamHeader.h ../SeqLib/UnalignedSequence.h ../bwa/bwa.h \
+ ../bwa/bntseq.h ../bwa/bwt.h ../bwa/bwt.h ../bwa/bntseq.h ../bwa/kseq.h \
+ ../bwa/utils.h ../bwa/bwamem.h ../bwa/bwa.h \
+ ../SeqLib/GenomicRegionCollection.cpp \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/fstream \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/codecvt.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++io.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/fstream.tcc \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/set \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_set.h \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_multiset.h \
+ ../SeqLib/aho_corasick.hpp \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/queue \
+ /gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_queue.h \
  ../htslib/htslib/khash.h
 
 /usr/include/stdc-predef.h:
 
 ../SeqLib/ReadFilter.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/string:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/string:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++config.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++config.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/os_defines.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/os_defines.h:
 
 /usr/include/features.h:
 
@@ -220,115 +243,131 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/wordsize.h:
 
+/usr/include/bits/long-double.h:
+
 /usr/include/gnu/stubs.h:
 
 /usr/include/gnu/stubs-64.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stringfwd.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stringfwd.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/memoryfwd.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/memoryfwd.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/char_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/char_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algobase.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_algobase.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functexcept.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/functexcept.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_defines.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/exception_defines.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cpp_type_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/cpp_type_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/type_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/type_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/numeric_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/numeric_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_pair.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_pair.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/move.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/move.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/concept_check.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/concept_check.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/type_traits:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/type_traits:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_types.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_iterator_base_types.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator_base_funcs.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_iterator_base_funcs.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/assertions.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/debug/assertions.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_iterator.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_iterator.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ptr_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ptr_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/debug/debug.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/debug/debug.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/predefined_ops.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/predefined_ops.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/postypes.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/postypes.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwchar:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cwchar:
 
 /usr/include/wchar.h:
 
-/usr/include/stdio.h:
+/usr/include/bits/libc-header-start.h:
 
-/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdarg.h:
+/usr/include/bits/floatn.h:
+
+/usr/include/bits/floatn-common.h:
+
+/gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include/stddef.h:
+
+/gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include/stdarg.h:
 
 /usr/include/bits/wchar.h:
 
-/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stddef.h:
+/usr/include/bits/types/wint_t.h:
 
-/usr/include/xlocale.h:
+/usr/include/bits/types/mbstate_t.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdint:
+/usr/include/bits/types/__mbstate_t.h:
 
-/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/stdint.h:
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/bits/types/__locale_t.h:
+
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstdint:
+
+/gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include/stdint.h:
 
 /usr/include/stdint.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocator.h:
+/usr/include/bits/types.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
+/usr/include/bits/typesizes.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/new_allocator.h:
+/usr/include/bits/stdint-intn.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/new:
+/usr/include/bits/stdint-uintn.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/exception:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/allocator.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/exception_ptr.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/new_allocator.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_init_exception.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/new:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/typeinfo:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/exception:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hash_bytes.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/atomic_lockfree_defines.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/nested_exception.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/exception_ptr.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/localefwd.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/nested_exception.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++locale.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/localefwd.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/clocale:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/clocale:
 
 /usr/include/locale.h:
 
 /usr/include/bits/locale.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iosfwd:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/iosfwd:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cctype:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cctype:
 
 /usr/include/ctype.h:
-
-/usr/include/bits/types.h:
-
-/usr/include/bits/typesizes.h:
 
 /usr/include/endian.h:
 
@@ -336,53 +375,77 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/byteswap.h:
 
-/usr/include/bits/byteswap-16.h:
+/usr/include/bits/uintn-identity.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream_insert.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ostream_insert.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/cxxabi_forced.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/cxxabi_forced.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_function.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_function.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/binders.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/backward/binders.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/range_access.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/range_access.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/initializer_list:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/initializer_list:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_string.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/atomicity.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/atomicity.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/gthr.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/gthr-default.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
 /usr/include/pthread.h:
 
 /usr/include/sched.h:
 
-/usr/include/time.h:
+/usr/include/bits/types/time_t.h:
+
+/usr/include/bits/types/struct_timespec.h:
 
 /usr/include/bits/sched.h:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/bits/cpu-set.h:
+
+/usr/include/time.h:
 
 /usr/include/bits/time.h:
 
 /usr/include/bits/timex.h:
 
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/bits/types/struct_tm.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
 /usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
 
 /usr/include/bits/setjmp.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/atomic_word.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/alloc_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/alloc_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/alloc_traits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/alloc_traits.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/string_conversions.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/string_conversions.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdlib:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstdlib:
 
 /usr/include/stdlib.h:
 
@@ -396,21 +459,27 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/select.h:
 
-/usr/include/bits/sigset.h:
+/usr/include/bits/types/sigset_t.h:
 
-/usr/include/sys/sysmacros.h:
+/usr/include/bits/types/__sigset_t.h:
 
 /usr/include/alloca.h:
 
+/usr/include/bits/stdlib-bsearch.h:
+
 /usr/include/bits/stdlib-float.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/std_abs.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstdio:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstdio:
+/usr/include/stdio.h:
 
-/usr/include/libio.h:
+/usr/include/bits/types/__fpos_t.h:
 
-/usr/include/_G_config.h:
+/usr/include/bits/types/__fpos64_t.h:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/bits/stdio_lim.h:
 
@@ -418,7 +487,7 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/stdio.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cerrno:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cerrno:
 
 /usr/include/errno.h:
 
@@ -432,27 +501,31 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/asm-generic/errno-base.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/functional_hash.h:
+/usr/include/bits/types/error_t.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_string.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/functional_hash.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/vector:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/hash_bytes.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_construct.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_string.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_uninitialized.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/vector:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_vector.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_construct.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_bvector.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_uninitialized.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/vector.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_vector.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/climits:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_bvector.h:
 
-/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/limits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/vector.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed/syslimits.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/climits:
+
+/gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include-fixed/limits.h:
+
+/gpfs/share/apps/gcc/6.1.0/lib/gcc/x86_64-pc-linux-gnu/6.1.0/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
@@ -466,123 +539,123 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/xopen_lim.h:
 
+/usr/include/bits/uio_lim.h:
+
 ../json/json.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/map:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/map:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_tree.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_tree.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/aligned_buffer.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/aligned_buffer.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_map.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_map.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/tuple:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/tuple:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/utility:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/utility:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_relops.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_relops.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/array:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/array:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdexcept:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/stdexcept:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uses_allocator.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/uses_allocator.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/invoke.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_multimap.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_multimap.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/deque:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/erase_if.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_deque.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/deque:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/deque.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_deque.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/stack:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/deque.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_stack.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stack:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/istream:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_stack.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ios:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/istream:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ios_base.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ios:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_classes.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ios_base.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_classes.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/system_error:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_classes.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/error_constants.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/system_error:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/streambuf:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/error_constants.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/streambuf.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/streambuf:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_ios.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_facets.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.h:
-
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.h:
-
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cwctype:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cwctype:
 
 /usr/include/wctype.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_base.h:
+/usr/include/bits/wctype-wchar.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/streambuf_iterator.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/ctype_inline.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/streambuf_iterator.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/locale_facets.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/ctype_inline.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/basic_ios.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/locale_facets.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ostream:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/basic_ios.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/ostream.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ostream:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/istream.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/ostream.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/stdlib.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/istream.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/sstream:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/stdlib.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/sstream.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/sstream:
+
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/sstream.tcc:
 
 ../SeqLib/GenomicRegionCollection.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/list:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/list:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_list.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_list.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/allocated_ptr.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/allocated_ptr.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/list.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/list.tcc:
 
 ../SeqLib/IntervalTree.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/algorithm:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/algorithm:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_algo.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_algo.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/algorithmfwd.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/algorithmfwd.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_heap.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_heap.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_tempbuf.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_tempbuf.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/uniform_int_dist.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/uniform_int_dist.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/limits:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/limits:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/iostream:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/iostream:
 
 ../SeqLib/BamRecord.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cassert:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cassert:
 
 /usr/include/assert.h:
 
@@ -596,9 +669,9 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 ../htslib/htslib/bgzf.h:
 
-/usr/include/zlib.h:
+/gpfs/share/apps/zlib/1.2.11/include/zlib.h:
 
-/usr/include/zconf.h:
+/gpfs/share/apps/zlib/1.2.11/include/zconf.h:
 
 /usr/include/unistd.h:
 
@@ -608,77 +681,85 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/confname.h:
 
-/usr/include/getopt.h:
+/usr/include/bits/getopt_posix.h:
+
+/usr/include/bits/getopt_core.h:
 
 ../htslib/htslib/kstring.h:
 
 /usr/include/string.h:
 
+/usr/include/strings.h:
+
 ../htslib/htslib/faidx.h:
 
 ../SeqLib/SeqLibUtils.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ctime:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ctime:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cmath:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cmath:
 
 /usr/include/math.h:
 
-/usr/include/bits/huge_val.h:
+/usr/include/bits/math-vector.h:
 
-/usr/include/bits/huge_valf.h:
+/usr/include/bits/libm-simd-decl-stubs.h:
 
-/usr/include/bits/huge_vall.h:
+/usr/include/bits/flt-eval-method.h:
 
-/usr/include/bits/inf.h:
+/usr/include/bits/fp-logb.h:
 
-/usr/include/bits/nan.h:
+/usr/include/bits/fp-fast.h:
 
-/usr/include/bits/mathdef.h:
+/usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/include/bits/iscanonical.h:
 
 /usr/include/bits/mathinline.h:
 
 ../SeqLib/SeqLibCommon.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/memory:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/memory:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_raw_storage_iter.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_raw_storage_iter.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/ext/concurrence.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/typeinfo:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unique_ptr.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/ext/concurrence.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/functional:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_base.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/unique_ptr.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/refwrap.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/shared_ptr.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/shared_ptr_atomic.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/shared_ptr_base.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_base.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/shared_ptr_atomic.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/atomic_lockfree_defines.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/atomic_base.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/backward/auto_ptr.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/backward/auto_ptr.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_set:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/unordered_set:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/hashtable.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/hashtable_policy.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/hashtable_policy.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_set.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/unordered_set.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/unordered_map:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/unordered_map:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/unordered_map.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/unordered_map.h:
 
 ../SeqLib/GenomicRegion.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/cstring:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/cstring:
 
 ../SeqLib/BamHeader.h:
 
@@ -704,26 +785,26 @@ libseqlib_a-ReadFilter.o: ReadFilter.cpp /usr/include/stdc-predef.h \
 
 ../SeqLib/GenomicRegionCollection.cpp:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/fstream:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/fstream:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/codecvt.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/codecvt.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/basic_file.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/basic_file.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/x86_64-pc-linux-gnu/bits/c++io.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/x86_64-pc-linux-gnu/bits/c++io.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/fstream.tcc:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/fstream.tcc:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/set:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/set:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_set.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_set.h:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_multiset.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_multiset.h:
 
 ../SeqLib/aho_corasick.hpp:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/queue:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/queue:
 
-/nfs/sw/gcc/gcc-9.2.0/include/c++/9.2.0/bits/stl_queue.h:
+/gpfs/share/apps/gcc/6.1.0/include/c++/6.1.0/bits/stl_queue.h:
 
 ../htslib/htslib/khash.h:
